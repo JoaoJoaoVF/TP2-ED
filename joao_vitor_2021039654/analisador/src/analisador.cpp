@@ -5,7 +5,7 @@ void AnalisaQuickSort(int Mediana)
 {
     Analisador *Analisador_do_arquivo = new Analisador[1000];
 
-    int modo = 0, posicao_lexicografica = 0, posicao_palavra = 0;
+    int tipo_de_leitura = 0, posicao_lexicografica = 0, posicao_palavra = 0;
     char Primeira_Palavra[100], Palavra[100], lexicografia[25];
 
     FILE *entrada = fopen("entrada.txt", "r");
@@ -14,18 +14,18 @@ void AnalisaQuickSort(int Mediana)
     fscanf(entrada, "%s", Primeira_Palavra);
     if (strcmp(Primeira_Palavra, "#TEXTO") == 0)
     {
-        modo = 1;
+        tipo_de_leitura = 1;
     }
     else if (strcmp(Primeira_Palavra, "#ORDEM") == 0)
     {
-        modo = 2;
+        tipo_de_leitura = 2;
     }
 
     while (!feof(entrada))
     {
 
         // leMemLog((long int)jogador[posicao].Cartas_jogador[i]._valor_carta, (long int)sizeof(int), jogador[posicao]._id);
-        if (modo == 1)
+        if (tipo_de_leitura == 1)
         {
             fscanf(entrada, "%s", Palavra);
 
@@ -33,7 +33,7 @@ void AnalisaQuickSort(int Mediana)
             {
                 Analisador_do_arquivo[posicao_palavra].palavra_do_texto = " ";
                 Analisador_do_arquivo[posicao_palavra].mediana = Mediana;
-                modo = 2;
+                tipo_de_leitura = 2;
             }
             else
             {
@@ -42,7 +42,7 @@ void AnalisaQuickSort(int Mediana)
                 posicao_palavra++;
             }
         }
-        else if (modo == 2)
+        else if (tipo_de_leitura == 2)
         {
             fscanf(entrada, "%s", Palavra);
 
@@ -50,7 +50,7 @@ void AnalisaQuickSort(int Mediana)
 
             if (strcmp(Palavra, "#TEXTO") == 0)
             {
-                modo = 1;
+                tipo_de_leitura = 1;
             }
             posicao_lexicografica++;
         }
