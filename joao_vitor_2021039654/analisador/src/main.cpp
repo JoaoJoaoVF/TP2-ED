@@ -1,6 +1,4 @@
-#include "analisador.hpp"
-#include "memlog.h"
-#include "msgassert.h"
+#include "../include/analisador.hpp"
 
 // variaveis globais para opcoes
 char nome_entrada[100];
@@ -32,11 +30,6 @@ void parse_args(int argc, char **argv)
 
     // inicializacao variaveis globais para opcoes
     S = 0;
-    // opescolhida = 1;
-    // nome_entrada[0] = 0;
-    // nome_saida[0] = 0;
-    // Mediana = -1;
-    // aux[0] = ' ';
 
     // getopt - letra indica a opcao, : junto a letra indica parametro
     // no caso de escolher mais de uma operacao, vale a ultima
@@ -86,10 +79,6 @@ int main(int argc, char **argv)
     iniciaMemLog(nome);
     ativaMemLog();
 
-    // FILE *entrada = fopen(nome_entrada, "r");
-    // erroAssert(entrada != NULL, "Não foi possivel abrir o arquivo");
-    // cout << S << endl;
-    // cout << nome_entrada << endl;
     if (S == 0)
     {
         AnalisaQuickSort(M, nome_entrada, nome_saida);
@@ -98,31 +87,6 @@ int main(int argc, char **argv)
     {
         AnalisaSimples(M, nome_entrada, nome_saida);
     }
-    // switch (opescolhida)
-    // {
-    // case QUICKSORT:
-    //     AnalisaQuickSort(Mediana);
-    // case SIMPLES:
-    //     AnalisaSimples(Mediana);
-    // }
-
-    // cout << endl;
-    // fclose(entrada);
-    return finalizaMemLog();
-    // return 0;
-}
-/*
-int main()
-{
-    int Mediana = 0;
-
-    char nome[100] = "./analisador_log.out";
-    iniciaMemLog(nome);
-    ativaMemLog();
-
-    AnalisaQuickSort(Mediana);
 
     return finalizaMemLog();
-    return 0;
 }
-*/

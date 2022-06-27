@@ -1,36 +1,51 @@
-# cc and flags
+#---------------------------------------------------------------------
+# Arquivo	: Makefile
+# Conteúdo	: compilar o programa Poker
+# Autor		: Joao Vitor Ferreira (ferreirajoao@dcc.ufmg.br)
+# Histórico	: 2022-06-07 - arquivo criado
+#---------------------------------------------------------------------
+# Opções	: make all - compila tudo
+#			: make clean - remove objetos e executável
+#---------------------------------------------------------------------
+
 CC = g++
-CXXFLAGS = -std=c++11 -g -Wall -pg
+LIBS = -lm 
+SRC = src
+OBJ = ./obj/
+INC = ./include/
+BIN = ./bin/
+OUT = ./saida/
+OBJS = $(OBJ)/analisador.o $(OBJ)/ordenacao.o $(OBJ)/main.o $(OBJ)/memlog.o
+HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/analisador.hpp $(INC)/ordenacao.hpp
+CFLAGS = -g -Wall -c -I$(INC)
 
-# folders
-INCLUDE_FOLDER = ./include/
-BIN_FOLFER = ./bin/
-OBJ_FOLDER = ./obj/
-SRC_FOLDER = ./src/
-OUTPUT_FOLFER = ./output/
+EXE = $(BIN)/analisador.out
 
-# all sourcers, obs, and header files
-MAIN = main
-TARGET = main.out
-SRC = $(wildcard $(SRC_FOLDER)*.cpp)
-OBJ = $(patsubst $(SRC_FOLDER)%.cpp, $(OBJ_FOLDER)%.o, $(SRC))
-LOGDATE = $(shell date +"%m/%d/%Y %H:%M")
+all: use
 
-$(OBJ_FOLDER)%.o: $(SRC_FOLDER)%.cpp
-	$(CC) $(CXXFLAGS) -c $< -o $@ -I$(INCLUDE_FOLDER)
-
-all: $(OBJ)
-	$(CC) $(CXXFLAGS) -o $(BIN_FOLFER)$(TARGET) $(OBJ)
-
-run:
-	./bin/main.out -i "./input/1.txt" -o "./output/saida1.txt" -s 1
-
-clean: 
-	@rm -rf $(OBJ_FOLDER)* $(BIN_FOLFER)* $(OUTPUT_FOLFER)*
-	@rm gmon.out
-	clear
+use: $(EXE)
+	$(EXE) -i "./input/1.txt" -o "./saida/saida1.txt"
 
 git: 
 	git add .
 	git commit -m "save on $(LOGDATE)"
 	git push
+
+$(BIN)/analisador: $(OBJS)
+	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
+
+$(OBJ)/main.o: $(HDRS) $(SRC)/main.cpp
+	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
+
+$(OBJ)/analisador.o: $(HDRS) $(SRC)/analisador.cpp
+	$(CC)  $(CFLAGS) -o $(OBJ)/analisador.o $(SRC)/analisador.cpp 
+
+$(OBJ)/ordenacao.o: $(HDRS) $(SRC)/ordenacao.cpp
+	$(CC)  $(CFLAGS) -o $(OBJ)/ordenacao.o $(SRC)/ordenacao.cpp 
+
+$(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.c
+	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
+
+clean:
+	rm -f $(EXE) $(OBJS) 
+	clear 

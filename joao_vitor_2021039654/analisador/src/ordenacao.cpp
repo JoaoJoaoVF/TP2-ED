@@ -1,5 +1,5 @@
-#include "ordenacao.hpp"
-#include "analisador.hpp"
+#include "../include/ordenacao.hpp"
+#include "../include/analisador.hpp"
 
 using namespace std;
 
@@ -63,21 +63,27 @@ void ImprimePalavras(Analisador Analisador[], int qtde_palavras)
 }
 void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 {
-    // ofstream saida(nome_saida);
+    // fstream *saida(nome_saida);
     // for (int i = 0; i < qtde_palavras; i++)
     // {
-    //     // cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
     //     saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
     // }
-    // for (int i = 0; i < 26; i++)
-    // {
-    //     saida << Letras[i] << " ";
-    // }
-    // saida << endl;
+
+    // saida << "#FIM" << endl;
     // saida.close();
+
+    // FILE *saida = fopen(nome_saida, "w");
+    // erroAssert(saida != NULL, "Não foi possivel abrir o arquivo");
+
+    // for (int i = 0; i < qtde_palavras; i++)
+    // {
+    //     // saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+    //     fputs(Analisador[i].palavra_do_texto, saida);
+    // }
+
+    // fclose(saida);
     for (int i = 0; i < qtde_palavras; i++)
     {
-        // cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
         cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
     }
 

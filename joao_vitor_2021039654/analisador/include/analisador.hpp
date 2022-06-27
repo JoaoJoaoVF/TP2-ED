@@ -5,8 +5,8 @@
 #include <string.h>
 #include <iostream>
 #include <iostream>
-#include "memlog.h"
-#include "msgassert.h"
+#include "../include/memlog.h"
+#include "../include/msgassert.h"
 using namespace std;
 
 void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida);

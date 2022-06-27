@@ -1,8 +1,11 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/jvf/USAR/analisador'
-g++ -std=c++11 -g -Wall -pg -c src/ordenacao.cpp -o obj/ordenacao.o -I./include/
-g++ -std=c++11 -g -Wall -pg -c src/main.cpp -o obj/main.o -I./include/
-g++ -std=c++11 -g -Wall -pg -c src/analisador.cpp -o obj/analisador.o -I./include/
-g++ -std=c++11 -g -Wall -pg -o ./bin/main.out  ./obj/ordenacao.o  ./obj/main.o  ./obj/analisador.o
-make: Leaving directory '/home/jvf/USAR/analisador'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
+g++  -g -Wall -c -I./include/ -o ./obj//ordenacao.o src/ordenacao.cpp 
+g++  -g -Wall -c -I./include/ -o ./obj//main.o src/main.cpp 
+g++ -g -Wall -c -I./include/ -o ./obj//memlog.o src/memlog.c
+g++ -g -o ./bin//analisador ./obj//analisador.o ./obj//ordenacao.o ./obj//main.o ./obj//memlog.o -lm 
+rm -f bin//analisador.out 
+cp bin//analisador bin//analisador.out
+./bin//analisador.out -i "./input/1.txt" -o "./saida/saida1.txt"
+make: Leaving directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
  

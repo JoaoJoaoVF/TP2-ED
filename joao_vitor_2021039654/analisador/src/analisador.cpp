@@ -1,9 +1,9 @@
-#include "analisador.hpp"
-#include "ordenacao.hpp"
+#include "../include/analisador.hpp"
+#include "../include/ordenacao.hpp"
 
 void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida)
 {
-    // cout << "QuickSort" << endl;
+    cout << "QuickSort" << endl;
     Analisador *Analisador_do_arquivo = new Analisador[1000];
 
     int tipo_de_leitura = 0, posicao_lexicografica = 0, posicao_palavra = 0;
@@ -38,7 +38,7 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida)
             }
             else
             {
-                // leMemLog((long int)Palavra, (long int)sizeof(char), posicao_palavra);
+                leMemLog((long int)Palavra, (long int)sizeof(char), posicao_palavra);
                 ConverteMinusculo(Analisador_do_arquivo, posicao_palavra, Palavra);
                 if (BuscaRepeticao(Analisador_do_arquivo, posicao_palavra, Palavra) == 0)
                 {
@@ -60,8 +60,8 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida)
         }
     }
 
-    ImprimePalavras(Analisador_do_arquivo, posicao_palavra);
-    ImprimeOrdemLexicografica(lexicografia);
+    // ImprimePalavras(Analisador_do_arquivo, posicao_palavra);
+    // ImprimeOrdemLexicografica(lexicografia);
     AtribuiOrdem(Analisador_do_arquivo, posicao_palavra, lexicografia);
     // ImprimeOrdemLexicograficadasPalavras(Analisador_do_arquivo, posicao_palavra);
 
