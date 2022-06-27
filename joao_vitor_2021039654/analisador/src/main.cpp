@@ -1,5 +1,7 @@
 #include "../include/analisador.hpp"
 
+using namespace std;
+
 // variaveis globais para opcoes
 char nome_entrada[100];
 char nome_saida[100];
@@ -78,6 +80,9 @@ int main(int argc, char **argv)
     char nome[22] = "./analisador_log.out";
     iniciaMemLog(nome);
     ativaMemLog();
+
+    // ofstream saida(nome_saida);
+    // saida.close();
 
     if (S == 0)
     {

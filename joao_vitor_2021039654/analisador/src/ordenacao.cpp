@@ -63,25 +63,16 @@ void ImprimePalavras(Analisador Analisador[], int qtde_palavras)
 }
 void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 {
-    // fstream *saida(nome_saida);
-    // for (int i = 0; i < qtde_palavras; i++)
-    // {
-    //     saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-    // }
 
-    // saida << "#FIM" << endl;
-    // saida.close();
+    ofstream saida(nome_saida);
+    for (int i = 0; i < qtde_palavras; i++)
+    {
+        saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+    }
 
-    // FILE *saida = fopen(nome_saida, "w");
-    // erroAssert(saida != NULL, "Não foi possivel abrir o arquivo");
+    saida << "#FIM" << endl;
+    saida.close();
 
-    // for (int i = 0; i < qtde_palavras; i++)
-    // {
-    //     // saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-    //     fputs(Analisador[i].palavra_do_texto, saida);
-    // }
-
-    // fclose(saida);
     for (int i = 0; i < qtde_palavras; i++)
     {
         cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;

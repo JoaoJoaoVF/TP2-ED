@@ -14,7 +14,6 @@ SRC = src
 OBJ = ./obj/
 INC = ./include/
 BIN = ./bin/
-OUT = ./saida/
 OBJS = $(OBJ)/analisador.o $(OBJ)/ordenacao.o $(OBJ)/main.o $(OBJ)/memlog.o
 HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/analisador.hpp $(INC)/ordenacao.hpp
 CFLAGS = -g -Wall -c -I$(INC)
@@ -24,7 +23,7 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./input/1.txt" -o "./saida/saida1.txt"
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt"
 
 git: 
 	git add .

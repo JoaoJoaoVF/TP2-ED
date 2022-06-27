@@ -5,6 +5,7 @@
 #include <string.h>
 #include <iostream>
 #include <iostream>
+#include <fstream>
 #include "../include/memlog.h"
 #include "../include/msgassert.h"
 using namespace std;
