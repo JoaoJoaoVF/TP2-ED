@@ -1,0 +1,12 @@
+- Ler dados do arquivo de entrada (FEITO)
+- Converter todas as letras das palavras para minusculo (FEITO)
+- Ignorar todos os casos em que ocorrem caracteres especiais (FEITO)
+- Implementar a leitura na linha de comando do nome do arquivo a ser lido pelo
+  comando -i|-I, da mediana para QuickSort com o comando -m|-M, o uso de um
+  algoritmo de Inserção e Seleção pelo comando -s|-S e a escrita do resultado
+  num arquivo txt pelo comando -o|-O (FEITO)
+- Implementar o quick sort para ordenação das palavras lidas seguindo a ordem dada na entrada
+- Implementar o algoritmo de Seleção e Inserção NAO ENTENDI COMO DEVE SER FEITO
+- Realizar a contagem das palavras repetidas (FEITO)
+- Fazer a escrita do resultado no arquivo de saida (FEITO) so ver como muda o ofstream
+- Realizar a junção da palavra com a proxima caso termine com "-"

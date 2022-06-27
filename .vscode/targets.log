@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 25 00:31:30 2022
+# Make data base, printed on Sat Jun 25 18:12:59 2022
 
 # Variables
 
@@ -51,11 +51,11 @@ VSCODE_CWD = /mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Microsoft 
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/PostgreSQL/14/bin:/mnt/c/Program Files/PostgreSQL/14/lib:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/PostgreSQL/14/bin:/mnt/c/Program Files/PostgreSQL/14/lib:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/João Vitor Ferreira/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/João Vitor Ferreira/AppData/Local/GitHubDesktop/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3367991b-3e1f-4eb4-9d65-58fa984fa0d7.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ec77537d-aafc-4169-ba5a-c4959ca8c11c.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,7 +69,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/27_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -79,7 +79,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = jvf
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -155,9 +155,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 99929): 6 files, no impossibilities.
+# . (device 2064, inode 99929): 7 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -207,12 +207,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 135 B / avg = 9 B
-# current buf: size = 8162 B / used = 135 B / count = 14 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 15 / storage = 143 B / avg = 9 B
+# current buf: size = 8162 B / used = 143 B / count = 15 / avg = 9 B
 
-# strcache performance: lookups = 17 / hit rate = 17%
+# strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
-# Finished Make data base on Sat Jun 25 00:31:30 2022
+# Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
+# Finished Make data base on Sat Jun 25 18:12:59 2022
 
  

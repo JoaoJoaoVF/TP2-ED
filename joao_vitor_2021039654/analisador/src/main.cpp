@@ -1,15 +1,11 @@
 #include "analisador.hpp"
-/*
-// definicoes de operacoes a serem testadas
-#define QUICKSORT 1
-#define SIMPLES 2
+#include "memlog.h"
+#include "msgassert.h"
 
 // variaveis globais para opcoes
-static int opescolhida;
 char nome_entrada[100];
 char nome_saida[100];
-int Mediana;
-char aux[10];
+int M, S;
 
 void uso()
 // Descricao: imprime as opcoes de uso
@@ -35,15 +31,16 @@ void parse_args(int argc, char **argv)
     int c;
 
     // inicializacao variaveis globais para opcoes
-    opescolhida = 1;
-    nome_entrada[0] = 0;
-    nome_saida[0] = 0;
-    Mediana = -1;
-    aux[0] = ' ';
+    S = 0;
+    // opescolhida = 1;
+    // nome_entrada[0] = 0;
+    // nome_saida[0] = 0;
+    // Mediana = -1;
+    // aux[0] = ' ';
 
     // getopt - letra indica a opcao, : junto a letra indica parametro
     // no caso de escolher mais de uma operacao, vale a ultima
-    while ((c = getopt(argc, argv, "smtp:I:i:M:m:S:s:O:o")) != EOF)
+    while ((c = getopt(argc, argv, "I:i:M:m:S:s:O:o:h")) != EOF)
         switch (c)
         {
         case 'I':
@@ -53,20 +50,16 @@ void parse_args(int argc, char **argv)
             strcpy(nome_entrada, optarg);
             break;
         case 'M':
-            strcpy(aux, optarg);
-            Mediana = stoi(aux);
+            M = atoi(optarg);
             break;
         case 'm':
-            strcpy(aux, optarg);
-            Mediana = stoi(aux);
+            M = atoi(optarg);
             break;
         case 'S':
-            avisoAssert(opescolhida == -1, "Mais de uma operacao escolhida");
-            opescolhida = SIMPLES;
+            S = atoi(optarg);
             break;
         case 's':
-            avisoAssert(opescolhida == -1, "Mais de uma operacao escolhida");
-            opescolhida = SIMPLES;
+            S = atoi(optarg);
             break;
         case 'O':
             strcpy(nome_saida, optarg);
@@ -74,32 +67,51 @@ void parse_args(int argc, char **argv)
         case 'o':
             strcpy(nome_saida, optarg);
             break;
+
+        case 'h':
         default:
             uso();
-            exit(1);
         }
     // verificacao da consistencia das opcoes
-    erroAssert(opescolhida > 0, "analisador - necessario escolher operacao");
+    // erroAssert(opescolhida > 0, "analisador - necessario escolher operacao");
 }
 
 int main(int argc, char **argv)
 {
+    // Usado para analisar os paramertos passado na linha de comando
     parse_args(argc, argv);
 
-    char nome[100] = "./analisador_log.out";
+    // Inicia o memlog
+    char nome[22] = "./analisador_log.out";
     iniciaMemLog(nome);
     ativaMemLog();
-    switch (opescolhida)
+
+    // FILE *entrada = fopen(nome_entrada, "r");
+    // erroAssert(entrada != NULL, "Não foi possivel abrir o arquivo");
+    // cout << S << endl;
+    // cout << nome_entrada << endl;
+    if (S == 0)
     {
-    case QUICKSORT:
-        AnalisaQuickSort(Mediana);
-    case SIMPLES:
-        AnalisaSimples(Mediana);
+        AnalisaQuickSort(M, nome_entrada, nome_saida);
     }
+    else
+    {
+        AnalisaSimples(M, nome_entrada, nome_saida);
+    }
+    // switch (opescolhida)
+    // {
+    // case QUICKSORT:
+    //     AnalisaQuickSort(Mediana);
+    // case SIMPLES:
+    //     AnalisaSimples(Mediana);
+    // }
+
+    // cout << endl;
+    // fclose(entrada);
     return finalizaMemLog();
-    return 0;
+    // return 0;
 }
-*/
+/*
 int main()
 {
     int Mediana = 0;
@@ -113,3 +125,4 @@ int main()
     return finalizaMemLog();
     return 0;
 }
+*/

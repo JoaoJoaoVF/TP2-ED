@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jvf/USAR/analisador'
+g++ -std=c++11 -g -Wall -pg -c src/ordenacao.cpp -o obj/ordenacao.o -I./include/
+g++ -std=c++11 -g -Wall -pg -c src/main.cpp -o obj/main.o -I./include/
+g++ -std=c++11 -g -Wall -pg -c src/analisador.cpp -o obj/analisador.o -I./include/
+g++ -std=c++11 -g -Wall -pg -o ./bin/main.out  ./obj/ordenacao.o  ./obj/main.o  ./obj/analisador.o
+make: Leaving directory '/home/jvf/USAR/analisador'
+ 
