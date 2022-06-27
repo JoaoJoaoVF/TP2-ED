@@ -81,8 +81,13 @@ int main(int argc, char **argv)
     iniciaMemLog(nome);
     ativaMemLog();
 
-    // ofstream saida(nome_saida);
-    // saida.close();
+    // Testa se os arquivos de entrada e saida
+    FILE *entrada = fopen(nome_entrada, "r");
+    erroAssert(entrada != NULL, "Não foi possivel abrir o arquivo");
+    fclose(entrada);
+    FILE *saida = fopen(nome_saida, "r");
+    erroAssert(saida != NULL, "Não foi possivel abrir o arquivo");
+    fclose(saida);
 
     if (S == 0)
     {
