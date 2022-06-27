@@ -19,7 +19,7 @@ disso 1
 faz 1
 tipo 1
 ten 1
-tenis 1
+tenis- 1
 top 1
 baita 1
 efeito 1

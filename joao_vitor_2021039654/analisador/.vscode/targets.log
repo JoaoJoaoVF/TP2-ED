@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 13:50:32 2022
+# Make data base, printed on Mon Jun 27 13:56:13 2022
 
 # Variables
 
@@ -236,7 +236,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 13:50:26.873098532
+#  Last modified 2022-06-27 13:55:57.283100351
 #  File has been updated.
 #  Successfully updated.
 
@@ -274,7 +274,6 @@ src/ordenacao.cpp:
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -322,7 +321,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 13:45:40.303096954
+#  Last modified 2022-06-27 13:55:55.003100339
 #  File has been updated.
 #  Successfully updated.
 
@@ -359,7 +358,8 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 
 # strcache performance: lookups = 69 / hit rate = 46%
 # hash-table stats:
+ 
 # Load=37/8192=0%, Rehash=0, Collisions=1/69=1%
-# Finished Make data base on Mon Jun 27 13:50:32 2022
+# Finished Make data base on Mon Jun 27 13:56:13 2022
 
  

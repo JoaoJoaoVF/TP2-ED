@@ -24,10 +24,15 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
     int tam, i;
     tam = strlen(palavra_extraida);
 
-    if (palavra_extraida[tam - 1] < 65)
+    if (palavra_extraida[tam - 1] < 65 && palavra_extraida[tam - 1] != 45)
     {
         palavra_extraida[tam - 1] = 0;
     }
+    // else if (palavra_extraida[tam - 1] == 45)
+    // {
+    //     cout << "aslkçjsalkfhjlksafjkhsalfjlkh" << endl;
+    //     palavra_extraida[tam - 1] = 0;
+    // }
 
     char resultado[tam];
     for (i = 0; i <= tam; i++)
@@ -61,6 +66,7 @@ void ImprimePalavras(Analisador Analisador[], int qtde_palavras)
     }
     // cout << endl;
 }
+
 void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 {
 
@@ -186,31 +192,6 @@ void QuickSort(Analisador Analisador[], int n)
 {
     Ordena(0, n - 1, Analisador);
 }
-
-// void ContaRepeticao(Analisador Analisador[], int qtde_palavras)
-// {
-//     int aux;
-//     for (int i = 0; i < qtde_palavras; i++)
-//     {
-//         for (int j = i; j < qtde_palavras; j++)
-//         {
-//             if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto)
-//             {
-//                 Analisador[i].repeticoes++;
-//                 // Analisador[j].palavra_do_texto = " ";
-//             }
-//         }
-//         if (Analisador[i].repeticoes > 0)
-//             cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-//         // i = aux;
-//         // cout << Analisador[i].palavra_do_texto << " ";
-//     }
-//     // for (int x = 0; x < count; i++)
-//     // {
-//     //     /* code */
-//     // }
-//     // cout << endl;
-// }
 
 void Selecao(Analisador Analisador[], int n)
 {
