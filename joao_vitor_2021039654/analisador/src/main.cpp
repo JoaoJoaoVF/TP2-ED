@@ -89,14 +89,9 @@ int main(int argc, char **argv)
     erroAssert(saida != NULL, "Não foi possivel abrir o arquivo");
     fclose(saida);
 
-    if (S == 0)
-    {
-        AnalisaQuickSort(M, nome_entrada, nome_saida);
-    }
-    else
-    {
-        AnalisaSimples(M, nome_entrada, nome_saida);
-    }
+    // Chama a funcao resposavel pela execucao do programa
+    AnalisaQuickSort(M, nome_entrada, nome_saida, S);
 
+    // finaliza a analise de tempo
     return finalizaMemLog();
 }

@@ -18,6 +18,7 @@ public:
     int mediana;
     int id;
     int repeticoes = 1;
+    int simples = 0;
 
     bool operator<(Analisador Analisador)
     {
@@ -100,6 +101,6 @@ void Particao(char Esq, char Dir, int *i, int *j, Analisador *Analisador);
 void QuickSort(Analisador *Analisador, int n);
 void Ordena(int Esq, int Dir, Analisador *Analisador);
 void ContaRepeticao(Analisador Analisador[], int qtde_palavras);
-void Selecao(Analisador Analisador[], int qtde_palavras);
-void Insercao(Analisador Analisador[], int qtde_palavras);
+void Selecao(Analisador Analisador[], int qtde_palavras, int final, int inicio);
+void Insercao(Analisador Analisador[], int qtde_palavras, int final, int inicio);
 void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 13:56:13 2022
+# Make data base, printed on Tue Jun 28 01:48:47 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ed009675-0ed4-4a5e-86ea-2c63210f96f7.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-34829d89-345d-40c2-8199-2d975bd7d687.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -81,7 +81,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/79_interop
+WSL_INTEROP = /run/WSL/29_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -91,7 +91,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = jvf
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -164,8 +164,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=15/143=10%
+# Load=78/1024=8%, Rehash=0, Collisions=15/144=10%
 
 # Pattern-specific Variable Values
 
@@ -236,7 +238,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 13:55:57.283100351
+#  Last modified 2022-06-28 01:48:12.86812735
 #  File has been updated.
 #  Successfully updated.
 
@@ -273,6 +275,7 @@ src/ordenacao.cpp:
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -302,7 +305,7 @@ use: bin//analisador.out
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt"
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -S 32 
 
 # Not a target:
 include//msgassert.h:
@@ -321,7 +324,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 13:55:55.003100339
+#  Last modified 2022-06-28 01:48:15.908127367
 #  File has been updated.
 #  Successfully updated.
 
@@ -358,8 +361,7 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 
 # strcache performance: lookups = 69 / hit rate = 46%
 # hash-table stats:
- 
 # Load=37/8192=0%, Rehash=0, Collisions=1/69=1%
-# Finished Make data base on Mon Jun 27 13:56:13 2022
+# Finished Make data base on Tue Jun 28 01:48:47 2022
 
  

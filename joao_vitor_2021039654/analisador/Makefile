@@ -23,7 +23,7 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt"
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -S 32 
 
 git: 
 	git add .

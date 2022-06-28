@@ -10,5 +10,4 @@
 #include "../include/msgassert.h"
 using namespace std;
 
-void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida);
-void AnalisaSimples(int Mediana, char *arquivo_entrada, char *arquivo_saida);
+void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simples);
