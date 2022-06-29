@@ -160,6 +160,7 @@ void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[])
 // Algoritmo Simples usado no trabalho, realiza a selesção da palavra do inicio e faz a troca dos dados
 void Selecao(Analisador Analisador[], int final, int inicio)
 {
+    cout << "selecao" << endl;
     int i, j, Min;
 
     for (i = inicio; i < final - 1; i++)
@@ -209,14 +210,15 @@ void Particao(int Esq, int Dir,
     *i = Esq;
     *j = Dir;
 
-    if (Analisador[*i].mediana > (*i + *j) / 2)
-    {
-        x = Analisador[*i].mediana / 2;
-    }
-    else
-    {
-        x = (*i + *j) / 2; /* obtem o pivo x */
-    }
+    // Arrumar essa parte da mediana
+    //  if (Analisador[*i].mediana > (*i + *j) / 2)
+    //  {
+    //      x = Analisador[*i].mediana / 2;
+    //  }
+    //  else
+    //  {
+    x = (*i + *j) / 2; /* obtem o pivo x */
+    // }
 
     do
     {
@@ -249,8 +251,10 @@ void Ordena(int Esq, int Dir, Analisador Analisador[])
     int i, j;
 
     // Em caso da particao ser menor que o valor passado como arguemento o algoritmo de selecao é chamado ao inves do quick
-    if (Dir - Esq < Analisador[Dir].simples)
-        Selecao(Analisador, Dir, Esq);
+
+    // Arrumar essa parte da selecao
+    //  if (Dir - Esq < Analisador[Dir].simples)
+    //      Selecao(Analisador, Dir, Esq);
 
     Particao(Esq, Dir, &i, &j, Analisador);
     if (Esq < j)

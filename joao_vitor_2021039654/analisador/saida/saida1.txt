@@ -13,13 +13,13 @@ e 2
 escorregadias 1
 excelente 1
 de 3
-disso 1
 diferenca 1
 calcado 1
+disso 1
 faz 1
+tipo 1
 ten 1
 tenis- 1
-tipo 1
 top 1
 baita 1
 efeito 1
@@ -49,8 +49,8 @@ mude 1
 um 1
 os 1
 originals 1
-longas 1
 para 1
+longas 1
 parte 1
 predominante 1
 promove 1

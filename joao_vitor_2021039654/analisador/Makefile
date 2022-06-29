@@ -23,12 +23,7 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -S 32 
-
-git: 
-	git add .
-	git commit -m "save on $(LOGDATE)"
-	git push
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" 
 
 $(BIN)/analisador: $(OBJS)
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
