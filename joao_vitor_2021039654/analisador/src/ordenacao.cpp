@@ -209,9 +209,9 @@ void Particao(int Esq, int Dir,
     *i = Esq;
     *j = Dir;
 
-    if (Analisador[*i].mediana > 0)
+    if (Analisador[*i].mediana > (*i + *j) / 2)
     {
-        x = Analisador[*i].mediana;
+        x = Analisador[*i].mediana / 2;
     }
     else
     {
