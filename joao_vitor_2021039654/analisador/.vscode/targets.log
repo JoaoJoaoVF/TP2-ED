@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 29 14:25:05 2022
+# Make data base, printed on Thu Jun 30 13:48:17 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-029090b1-f3e2-438e-a3b3-ea547d0d3748.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b98a590a-a85b-489d-bd2b-90c9f4720bfa.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -81,7 +81,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/30_interop
+WSL_INTEROP = /run/WSL/28_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -91,7 +91,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = jvf
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -227,7 +227,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-29 14:25:04.069571461
+#  Last modified 2022-06-30 13:48:17.332904627
 #  File has been updated.
 #  Successfully updated.
 
@@ -294,7 +294,7 @@ use: bin//analisador.out
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" 
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -M 10 -s 5
 
 # Not a target:
 include//msgassert.h:
@@ -313,7 +313,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-29 14:24:46.839571366
+#  Last modified 2022-06-30 13:47:12.752904271
 #  File has been updated.
 #  Successfully updated.
 
@@ -351,6 +351,6 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 # strcache performance: lookups = 67 / hit rate = 46%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Wed Jun 29 14:25:05 2022
+# Finished Make data base on Thu Jun 30 13:48:17 2022
 
  

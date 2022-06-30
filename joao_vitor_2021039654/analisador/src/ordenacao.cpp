@@ -33,19 +33,16 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
     {
         palavra_extraida[tam - 1] = 0;
     }
-    // else if (palavra_extraida[tam - 1] == 45)
-    // {
-    //     cout << "aslkçjsalkfhjlksafjkhsalfjlkh" << endl;
-    //     palavra_extraida[tam - 1] = 0;
-    // }
 
     // Variavel auxiliar para guardar a conversao da palavra para minusculo
     char resultado[tam];
 
     for (i = 0; i <= tam; i++)
-    { // Converte cada letra da palavra para minusculo
+    {
+        // Converte cada letra da palavra para minusculo
         resultado[i] = tolower(palavra_extraida[i]);
     }
+
     // Atribui a palavra com todas as letras minusculas para ela mesmo
     Analisador[qtde_palavras].palavra_do_texto = resultado;
 }
@@ -202,8 +199,7 @@ void Insercao(Analisador Analisador_palavras[], int final, int inicio)
     }
 }
 
-void Particao(int Esq, int Dir,
-              int *i, int *j, Analisador Analisador[])
+void Particao(int Esq, int Dir, int *i, int *j, Analisador Analisador[])
 {
 
     int x;
@@ -252,9 +248,8 @@ void Ordena(int Esq, int Dir, Analisador Analisador[])
 
     // Em caso da particao ser menor que o valor passado como arguemento o algoritmo de selecao é chamado ao inves do quick
 
-    // Arrumar essa parte da selecao
-    //  if (Dir - Esq < Analisador[Dir].simples)
-    //      Selecao(Analisador, Dir, Esq);
+    if (Dir - Esq < Analisador[Dir].simples)
+        Selecao(Analisador, Dir, Esq);
 
     Particao(Esq, Dir, &i, &j, Analisador);
     if (Esq < j)
@@ -265,5 +260,11 @@ void Ordena(int Esq, int Dir, Analisador Analisador[])
 
 void QuickSort(Analisador Analisador[], int n)
 {
+    // cout << "QuickSort" << endl;
+
     Ordena(0, n - 1, Analisador);
+    // Ordena(0, n - 1, Analisador);
+    // Ordena(0, n - 1, Analisador);
+    // Ordena(0, n - 1, Analisador);
+    // Ordena(0, n - 1, Analisador);
 }

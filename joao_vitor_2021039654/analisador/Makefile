@@ -2,7 +2,7 @@
 # Arquivo	: Makefile
 # Conteúdo	: compilar o programa Poker
 # Autor		: Joao Vitor Ferreira (ferreirajoao@dcc.ufmg.br)
-# Histórico	: 2022-06-07 - arquivo criado
+# Histórico	: 2022-06-30 - arquivo criado
 #---------------------------------------------------------------------
 # Opções	: make all - compila tudo
 #			: make clean - remove objetos e executável
@@ -23,7 +23,7 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" 
+	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -M 10 -s 5
 
 $(BIN)/analisador: $(OBJS)
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)

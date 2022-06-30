@@ -67,8 +67,9 @@ void parse_args(int argc, char **argv)
         default:
             uso();
         }
+
     // verificacao da consistencia das opcoes
-    // erroAssert(opescolhida > 0, "analisador - necessario escolher operacao");
+    erroAssert(M > 0, "Necessario passar um valor de Mediana");
 }
 
 int main(int argc, char **argv)
@@ -85,7 +86,7 @@ int main(int argc, char **argv)
     FILE *entrada = fopen(nome_entrada, "r");
     erroAssert(entrada != NULL, "Não foi possivel abrir o arquivo");
     fclose(entrada);
-    FILE *saida = fopen(nome_saida, "r");
+    FILE *saida = fopen(nome_saida, "w");
     erroAssert(saida != NULL, "Não foi possivel abrir o arquivo");
     fclose(saida);
 

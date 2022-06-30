@@ -42,20 +42,19 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
             fscanf(entrada, "%s", Palavra);
 
             // Atribui o valor da mediana, o valor da partição de ordencação e o id da palavra
-            Analisador_do_arquivo[posicao_palavra].mediana = Mediana;
+            // Analisador_do_arquivo[posicao_palavra].mediana = Mediana;
             Analisador_do_arquivo[posicao_palavra].simples = Simples;
             Analisador_do_arquivo[posicao_palavra].id = posicao_palavra;
             // cout << Analisador_do_arquivo[posicao_palavra].simples << endl;
 
             if (strcmp(Palavra, "#ORDEM") == 0)
-            { // Quando o bloco #ORDEM é encontrado troca o tipo de leitura para 2
-              //  Analisador_do_arquivo[posicao_palavra].palavra_do_texto = " ";
+            {
+                // Quando o bloco #ORDEM é encontrado troca o tipo de leitura para 2
                 tipo_de_leitura = 2;
             }
             else
             {
                 leMemLog((long int)Palavra, (long int)sizeof(char), posicao_palavra);
-
                 // Chama a funcao para tratar da palavra lida
                 ConverteMinusculo(Analisador_do_arquivo, posicao_palavra, Palavra);
 
@@ -84,15 +83,37 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
             posicao_lexicografica++;
         }
     }
-
+    // cout << posicao_palavra << endl;
     // Chama as funcoes necessarias para o resto da execucao do programa
 
     // ImprimePalavras(Analisador_do_arquivo, posicao_palavra);
     // ImprimeOrdemLexicografica(lexicografia);
     AtribuiOrdem(Analisador_do_arquivo, posicao_palavra, lexicografia);
     // ImprimeOrdemLexicograficadasPalavras(Analisador_do_arquivo, posicao_palavra);
-
-    QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // cout << posicao_palavra / (Mediana * 2) << endl;
+    int b = 0, c = posicao_palavra / Mediana, d = 0;
+    for (int a = 0; a < posicao_palavra; a++)
+    {
+        b++;
+        if (b == Mediana)
+        {
+            QuickSort(Analisador_do_arquivo, a + 1);
+            // cout << a << endl;
+            b = 0;
+            d++;
+        }
+        else if (c == d)
+        {
+            QuickSort(Analisador_do_arquivo, posicao_palavra);
+            // cout << c << " " << d << endl;
+        }
+    }
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    // QuickSort(Analisador_do_arquivo, posicao_palavra);
     // ImprimePsalavras(Analisador_do_arquivo, posicao_palavra);
     // ContaRepeticao(Analisador_do_arquivo, posicao_palavra);
     //     cout << endl;
