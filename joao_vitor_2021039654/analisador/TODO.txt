@@ -1,15 +1,26 @@
-- Ler dados do arquivo de entrada (FEITO)
+- Ler dados do arquivo de entrada (FEITO) MUDAR LOGICA
 - Converter todas as letras das palavras para minusculo (FEITO)
-- Ignorar todos os casos em que ocorrem caracteres especiais (FEITO)
+- Ignorar todos os casos em que ocorrem caracteres especiais (FEITO) TEM ERROS É NA PALAVRA TODA
 - Implementar a leitura na linha de comando do nome do arquivo a ser lido pelo
   comando -i|-I, da mediana para QuickSort com o comando -m|-M, o uso de um
   algoritmo de Inserção e Seleção pelo comando -s|-S e a escrita do resultado
   num arquivo txt pelo comando -o|-O (FEITO)
-- Implementar o quick sort para ordenação das palavras lidas seguindo a ordem dada na entrada (FEITO)
+- Implementar o quick sort para ordenação das palavras lidas seguindo a ordem dada na entrada (FEITO) DEPENDE DA MEDIANA E OUTROS CASOS
 - Implementar o algoritmo de Seleção e Inserção (FEITO)
-- Realizar a contagem das palavras repetidas ERRO COPIA NA ULTIMA
+- Realizar a contagem das palavras repetidas ERRO COPIA NA ULTIMA e inconsistencias da ordenacao e remocao de caracteres especias
 - Fazer a escrita do resultado no arquivo de saida (FEITO)
 - Realizar a junção da palavra com a proxima caso termine com "-"
 - Caso da Mediana (FEITO)
 - Documentacao 
 - Analisamem
+
+PROBLEMAS
+- 1 = Copia de ocasioes
+- 3 = Copia de Ronaldo sem formatacao
+- 4 = Copia da palavra adshgadshgvgvadshgdhgddd 
+- 5 = Copia de guard-costas
+- 6 = Copia de guard-costas
+- 7 = Inumero erros de falta de ordem em 1 caso, sem agrupamento , numero some da ultima posicao
+- 8 = Inumero erros de falta de ordem em 3 casos, sem agrupamento , numero some da ultima posicao
+- 9 = Copia de preto
+- 10 = Copia de preto

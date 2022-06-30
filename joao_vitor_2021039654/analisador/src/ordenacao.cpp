@@ -172,7 +172,7 @@ void Selecao(Analisador Analisador[], int final, int inicio)
 
         // Troca dos dados em caso de mudanca;
         Troca_string(Analisador[i].palavra_do_texto, Analisador[Min].palavra_do_texto);
-        for (int teste = 0; teste < 30; teste++)
+        for (int teste = 0; teste < 1000; teste++)
         {
             Troca_int(Analisador[i].lexicografica_da_ordem[teste], Analisador[Min].lexicografica_da_ordem[teste]);
         }
@@ -230,7 +230,7 @@ void Particao(int Esq, int Dir, int *i, int *j, Analisador Analisador[])
         if (*i <= *j)
         {
             Troca_string(Analisador[*i].palavra_do_texto, Analisador[*j].palavra_do_texto);
-            for (int teste = 0; teste < 30; teste++)
+            for (int teste = 0; teste < 1000; teste++)
             {
                 Troca_int(Analisador[*i].lexicografica_da_ordem[teste], Analisador[*j].lexicografica_da_ordem[teste]);
             }

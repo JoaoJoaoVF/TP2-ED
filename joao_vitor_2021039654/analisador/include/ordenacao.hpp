@@ -14,7 +14,7 @@ class Analisador
 {
 public:
     string palavra_do_texto;
-    int lexicografica_da_ordem[50];
+    int lexicografica_da_ordem[1000];
     int mediana;
     int id;
     int repeticoes = 1;

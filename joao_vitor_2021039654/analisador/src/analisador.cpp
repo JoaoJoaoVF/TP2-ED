@@ -108,7 +108,7 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
             // cout << c << " " << d << endl;
         }
     }
-    // QuickSort(Analisador_do_arquivo, posicao_palavra);
+    QuickSort(Analisador_do_arquivo, posicao_palavra);
     // QuickSort(Analisador_do_arquivo, posicao_palavra);
     // QuickSort(Analisador_do_arquivo, posicao_palavra);
     // QuickSort(Analisador_do_arquivo, posicao_palavra);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 13:48:17 2022
+# Make data base, printed on Thu Jun 30 13:57:42 2022
 
 # Variables
 
@@ -165,7 +165,8 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=15/143=10%
+ 
+# Load=77/1024=8%, Rehash=0, Collisions=15/161=9%
 
 # Pattern-specific Variable Values
 
@@ -187,7 +188,7 @@ obj//ordenacao.o: include//memlog.h include//msgassert.h include//analisador.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 47):
 	$(CC)  $(CFLAGS) -o $(OBJ)/ordenacao.o $(SRC)/ordenacao.cpp 
 
 # Not a target:
@@ -209,13 +210,13 @@ all: use
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/23=0%
 
 obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+#  recipe to execute (from 'Makefile', line 41):
 	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
 
 # Not a target:
@@ -227,7 +228,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 13:48:17.332904627
+#  Last modified 2022-06-30 13:55:54.612907145
 #  File has been updated.
 #  Successfully updated.
 
@@ -247,7 +248,7 @@ bin//analisador: obj//analisador.o obj//ordenacao.o obj//main.o obj//memlog.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
+#  recipe to execute (from 'Makefile', line 38):
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
 
 # Not a target:
@@ -274,7 +275,6 @@ use: bin//analisador.out
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
- 
 # automatic
 # @ := use
 # automatic
@@ -292,9 +292,18 @@ use: bin//analisador.out
 # automatic
 # ? := bin//analisador.out
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+# Load=8/32=25%, Rehash=0, Collisions=11/31=35%
 #  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -M 10 -s 5
+	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" -M 5
+	$(EXE) -i "./entrada/2.txt" -o "./saida/2.txt" -M 5
+	$(EXE) -i "./entrada/3.txt" -o "./saida/3.txt" -M 5
+	$(EXE) -i "./entrada/4.txt" -o "./saida/4.txt" -M 5
+	$(EXE) -i "./entrada/5.txt" -o "./saida/5.txt" -M 5
+	$(EXE) -i "./entrada/6.txt" -o "./saida/6.txt" -M 5
+	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt" -M 5
+	$(EXE) -i "./entrada/8.txt" -o "./saida/8.txt" -M 5
+	$(EXE) -i "./entrada/9.txt" -o "./saida/9.txt" -M 5
+	$(EXE) -i "./entrada/10.txt" -o "./saida/10.txt" -M 5
 
 # Not a target:
 include//msgassert.h:
@@ -306,14 +315,14 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
+#  recipe to execute (from 'Makefile', line 53):
 	rm -f $(EXE) $(OBJS) 
 	clear 
 
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 13:47:12.752904271
+#  Last modified 2022-06-30 13:56:00.372907177
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,14 +336,14 @@ obj//memlog.o: include//memlog.h include//msgassert.h include//analisador.hpp in
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 50):
 	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
 
 obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/analisador.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 44):
 	$(CC)  $(CFLAGS) -o $(OBJ)/analisador.o $(SRC)/analisador.cpp 
 
 # files hash-table stats:
@@ -351,6 +360,6 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 # strcache performance: lookups = 67 / hit rate = 46%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Thu Jun 30 13:48:17 2022
+# Finished Make data base on Thu Jun 30 13:57:42 2022
 
  

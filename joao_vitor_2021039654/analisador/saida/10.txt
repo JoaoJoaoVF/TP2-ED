@@ -1,0 +1,8 @@
+do 2
+preto 2
+pe 1
+pedro 1
+peito 1
+o 1
+e 1
+#FIM
