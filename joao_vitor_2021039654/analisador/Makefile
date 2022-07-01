@@ -14,9 +14,10 @@ SRC = src
 OBJ = ./obj/
 INC = ./include/
 BIN = ./bin/
+SAIDA = ./saida/
 OBJS = $(OBJ)/analisador.o $(OBJ)/ordenacao.o $(OBJ)/main.o $(OBJ)/memlog.o
 HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/analisador.hpp $(INC)/ordenacao.hpp
-CFLAGS = -g -Wall -c -I$(INC)
+CFLAGS = -pg -Wall -c -I$(INC)
 
 EXE = $(BIN)/analisador.out
 
@@ -24,6 +25,7 @@ all: use
 
 use: $(EXE)
 	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt"
+#	gprof $(EXE) gmon.out > gprof.txt
 
 $(BIN)/analisador: $(OBJS)
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
@@ -41,5 +43,5 @@ $(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.c
 	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
 
 clean:
-	rm -f $(EXE) $(OBJS) 
+	rm -f $(EXE)* $(OBJS)* $(SAIDA)* $(BIN)* gmon.out
 	clear 

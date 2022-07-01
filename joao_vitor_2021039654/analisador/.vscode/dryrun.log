@@ -1,9 +1,9 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
-g++  -g -Wall -c -I./include/ -o ./obj//analisador.o src/analisador.cpp 
-g++  -g -Wall -c -I./include/ -o ./obj//ordenacao.o src/ordenacao.cpp 
-g++  -g -Wall -c -I./include/ -o ./obj//main.o src/main.cpp 
-g++ -g -Wall -c -I./include/ -o ./obj//memlog.o src/memlog.c
+g++  -pg -Wall -c -I./include/ -o ./obj//analisador.o src/analisador.cpp 
+g++  -pg -Wall -c -I./include/ -o ./obj//ordenacao.o src/ordenacao.cpp 
+g++  -pg -Wall -c -I./include/ -o ./obj//main.o src/main.cpp 
+g++ -pg -Wall -c -I./include/ -o ./obj//memlog.o src/memlog.c
 g++ -g -o ./bin//analisador ./obj//analisador.o ./obj//ordenacao.o ./obj//main.o ./obj//memlog.o -lm 
 rm -f bin//analisador.out 
 cp bin//analisador bin//analisador.out

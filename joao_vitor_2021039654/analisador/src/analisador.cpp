@@ -1,5 +1,5 @@
-#include "../include/analisador.hpp"
-#include "../include/ordenacao.hpp"
+#include "analisador.hpp"
+#include "ordenacao.hpp"
 
 void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simples)
 {
@@ -50,7 +50,8 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
             }
             else
             {
-                leMemLog((long int)Palavra, (long int)sizeof(char), posicao_palavra);
+                leMemLog((long int)Palavra, (long int)sizeof(char), 0);
+                ESCREVEMEMLOG((long int)Palavra, (long int)sizeof(char), 0);
                 // Chama a funcao para tratar da palavra lida
                 ConverteMinusculo(Analisador_do_arquivo, posicao_palavra, Palavra);
 

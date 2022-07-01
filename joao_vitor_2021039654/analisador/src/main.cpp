@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     parse_args(argc, argv);
 
     // Inicia o memlog
-    char nome[22] = "./analisador_log.out";
+    char nome[30] = "./bin/analisador_log.out";
     iniciaMemLog(nome);
     ativaMemLog();
 

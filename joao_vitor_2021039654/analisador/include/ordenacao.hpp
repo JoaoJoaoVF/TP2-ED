@@ -5,9 +5,9 @@
 #include <iostream>
 #include <iostream>
 #include <cstring>
-#include "../include/analisador.hpp"
-#include "../include/memlog.h"
-#include "../include/msgassert.h"
+#include "analisador.hpp"
+#include "memlog.h"
+#include "msgassert.h"
 using namespace std;
 
 class Analisador

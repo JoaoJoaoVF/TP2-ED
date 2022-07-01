@@ -1,5 +1,5 @@
-#include "../include/ordenacao.hpp"
-#include "../include/analisador.hpp"
+#include "ordenacao.hpp"
+#include "analisador.hpp"
 
 using namespace std;
 

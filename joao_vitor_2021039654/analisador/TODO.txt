@@ -9,7 +9,6 @@
 - Implementar o algoritmo de Seleção e Inserção (FEITO)
 - Realizar a contagem das palavras repetidas (FEITO)
 - Fazer a escrita do resultado no arquivo de saida (FEITO)
-- Realizar a junção da palavra com a proxima caso termine com "-"
 - Caso da Mediana (FEITO)
 - Documentacao 
 - Analisamem

@@ -1,5 +1,0 @@
-guard-costas 2
-guarda-chuva 1
-guarda-coisa 1
-guarda-napo 1
-#FIM
