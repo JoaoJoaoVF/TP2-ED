@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'bin//analisador.out', needed by 'use'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul  1 02:06:21 2022
+# Make data base, printed on Fri Jul  1 02:23:25 2022
 
 # Variables
 
@@ -165,7 +167,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=15/143=10%
+# Load=77/1024=8%, Rehash=0, Collisions=15/138=11%
 
 # Pattern-specific Variable Values
 
@@ -206,10 +208,7 @@ all: use
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  File has not been updated.
 
 obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/main.cpp
 #  Implicit rule search has not been done.
@@ -219,15 +218,9 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
 
 # Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 02:01:26.987490278
+#  Last modified 2022-07-01 02:23:25.057497536
 #  File has been updated.
 #  Successfully updated.
 
@@ -270,31 +263,10 @@ src/ordenacao.cpp:
 
 use: bin//analisador.out
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
- 
-# automatic
-# @ := use
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := bin//analisador.out
-# automatic
-# | := 
-# automatic
-# < := bin//analisador.out
-# automatic
-# ^ := bin//analisador.out
-# automatic
-# ? := bin//analisador.out
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt"
+	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt"
 
 # Not a target:
 include//msgassert.h:
@@ -305,6 +277,7 @@ include//msgassert.h:
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 44):
 	rm -f $(EXE) $(OBJS) 
@@ -313,9 +286,8 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 02:01:30.547490298
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 src/main.cpp:
@@ -338,7 +310,7 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 	$(CC)  $(CFLAGS) -o $(OBJ)/analisador.o $(SRC)/analisador.cpp 
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/63=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/62=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -348,9 +320,9 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 # strcache buffers: 1 (0) / strings = 36 / storage = 426 B / avg = 11 B
 # current buf: size = 8162 B / used = 426 B / count = 36 / avg = 11 B
 
-# strcache performance: lookups = 67 / hit rate = 46%
+# strcache performance: lookups = 66 / hit rate = 45%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Fri Jul  1 02:06:21 2022
+# Load=36/8192=0%, Rehash=0, Collisions=1/66=2%
+# Finished Make data base on Fri Jul  1 02:23:25 2022
 
  

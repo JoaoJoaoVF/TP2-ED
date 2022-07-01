@@ -30,7 +30,7 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
 
     // Em caso de haver um caracter especial diferente de '-' na palavra de acordo com sua posicação na tabela ASCII
     if (((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
-         (palavra_extraida[tam - 1] > 58 && palavra_extraida[tam - 1] < 65) ||
+         (palavra_extraida[tam - 1] > 57 && palavra_extraida[tam - 1] < 65) ||
          (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
          (palavra_extraida[tam - 1] > 122)) &&
         (palavra_extraida[tam - 1] != 45))
@@ -56,21 +56,24 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palav
 {
     // Variavel que define a quantidade de vezes em que a palavra aparece no texto
     // int encontrou = 0;
-
+    int reps = 0;
     // Loop que compara as palavras e em caso de encontrar uma correspondencia incrementa a variavel exclusiva para isso
     for (int i = 0; i < qtde_palavras; i++)
     {
-        for (int j = i + 1; j < qtde_palavras; j++)
+        reps = 0;
+        for (int j = 0; j < qtde_palavras; j++)
         {
-            if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto)
+            if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto && Analisador[j].contado != -1)
             {
+                reps++;
                 // cout << "dsadad" << endl;
-                Analisador[i].repeticoes++;
-                Analisador[j].contado++;
+                // Analisador[i].repeticoes++;
+                Analisador[j].contado = -1;
                 // encontrou++;
             }
             // cout << Analisador[i].palavra_do_texto << endl;
         }
+        Analisador[i].repeticoes = reps;
     }
 
     // Retorna a quantidade de repeticoes da palavra no texto
@@ -95,10 +98,10 @@ void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
     {
-        // if (Analisador[i].contado == 0)
-        // {
-        saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-        // }
+        if (Analisador[i].repeticoes > 0)
+        {
+            saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+        }
     }
 
     // Realiza a finalização do conteudo e fecha o arquivo de saida
@@ -107,10 +110,10 @@ void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 
     for (int i = 0; i < qtde_palavras; i++)
     {
-        // if (Analisador[i].contado == 0)
-        // {
-        cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-        // }
+        if (Analisador[i].repeticoes > 0)
+        {
+            cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+        }
     }
 
     cout << "#FIM" << endl;
