@@ -1,4 +1,4 @@
-#include "../include/analisador.hpp"
+#include "../include/Execucao.hpp"
 
 using namespace std;
 
@@ -91,7 +91,7 @@ int main(int argc, char **argv)
     fclose(saida);
 
     // Chama a funcao resposavel pela execucao do programa
-    AnalisaQuickSort(M, nome_entrada, nome_saida, S);
+    Executa(M, nome_entrada, nome_saida, S);
 
     // finaliza a analise de tempo
     return finalizaMemLog();

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'bin//analisador.out', needed by 'use'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'bin//analisador.out', needed by 'use'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul  1 16:00:36 2022
+# Make data base, printed on Fri Jul  1 18:32:51 2022
 
 # Variables
 
@@ -47,7 +45,7 @@ _ = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
 # makefile (from 'Makefile', line 20)
 CFLAGS = -pg -Wall -c -I$(INC)
 # makefile (from 'Makefile', line 19)
-HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/analisador.hpp $(INC)/ordenacao.hpp
+HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/Execucao.hpp $(INC)/Analisador.hpp
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
@@ -57,7 +55,7 @@ XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 18)
-OBJS = $(OBJ)/analisador.o $(OBJ)/ordenacao.o $(OBJ)/main.o $(OBJ)/memlog.o
+OBJS = $(OBJ)/Execucao.o $(OBJ)/Analisador.o $(OBJ)/main.o $(OBJ)/memlog.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -69,7 +67,7 @@ PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1e45f6c1-3665-47b1-b0e1-8a9e31629383.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-64b7b2f7-80dc-4f2f-a0ca-1edd29c3cf5e.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -83,7 +81,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8137_interop
+WSL_INTEROP = /run/WSL/935_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -93,7 +91,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = jvf
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -169,7 +167,7 @@ WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'Makefile', line 17)
 SAIDA = ./saida/
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=15/139=11%
+# Load=78/1024=8%, Rehash=0, Collisions=15/146=10%
 
 # Pattern-specific Variable Values
 
@@ -187,12 +185,12 @@ SAIDA = ./saida/
 
 # Files
 
-obj//ordenacao.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/ordenacao.cpp
+obj//Execucao.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/Execucao.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
-	$(CC)  $(CFLAGS) -o $(OBJ)/ordenacao.o $(SRC)/ordenacao.cpp 
+#  recipe to execute (from 'Makefile', line 47):
+	$(CC)  $(CFLAGS) -o $(OBJ)/Execucao.o $(SRC)/Execucao.cpp 
 
 # Not a target:
 include//memlog.h:
@@ -210,49 +208,58 @@ all: use
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/main.cpp
+obj//main.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 44):
 	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 15:57:35.36630472
+#  Last modified 2022-07-01 18:32:42.20451944
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-include//analisador.hpp:
+include//Analisador.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/analisador.cpp:
+src/Analisador.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-bin//analisador: obj//analisador.o obj//ordenacao.o obj//main.o obj//memlog.o
+bin//analisador: obj//Execucao.o obj//Analisador.o obj//main.o obj//memlog.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 41):
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
 
 # Not a target:
-include//ordenacao.hpp:
+include//Execucao.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/ordenacao.cpp:
+src/Execucao.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -265,10 +272,32 @@ src/ordenacao.cpp:
 
 use: bin//analisador.out
 #  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+ 
+#  Needs to be updated (-q is set).
+# automatic
+# @ := use
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := bin//analisador.out
+# automatic
+# | := 
+# automatic
+# < := bin//analisador.out
+# automatic
+# ^ := bin//analisador.out
+# automatic
+# ? := bin//analisador.out
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/15=20%
 #  recipe to execute (from 'Makefile', line 27):
 	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt"
+	$(EXE) -i "./entrada/11.txt" -o "./saida/11.txt"
 
 # Not a target:
 include//msgassert.h:
@@ -277,19 +306,19 @@ include//msgassert.h:
 #  File has not been updated.
 
 clean:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 56):
 	rm -f $(EXE)* $(OBJS)* $(SAIDA)* $(BIN)* gmon.out
 	clear 
 
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-07-01 18:32:44.944519486
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/main.cpp:
@@ -297,34 +326,34 @@ src/main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj//memlog.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/memlog.c
+obj//memlog.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/memlog.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 53):
 	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
 
-obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/analisador.cpp
+obj//Analisador.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/Analisador.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 37):
-	$(CC)  $(CFLAGS) -o $(OBJ)/analisador.o $(SRC)/analisador.cpp 
+#  recipe to execute (from 'Makefile', line 50):
+	$(CC)  $(CFLAGS) -o $(OBJ)/Analisador.o $(SRC)/Analisador.cpp 
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/62=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/63=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 386 B / avg = 11 B
-# current buf: size = 8162 B / used = 386 B / count = 33 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 383 B / avg = 11 B
+# current buf: size = 8162 B / used = 383 B / count = 33 / avg = 11 B
 
-# strcache performance: lookups = 63 / hit rate = 47%
+# strcache performance: lookups = 64 / hit rate = 48%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=1/63=2%
-# Finished Make data base on Fri Jul  1 16:00:36 2022
+# Load=33/8192=0%, Rehash=0, Collisions=1/64=2%
+# Finished Make data base on Fri Jul  1 18:32:51 2022
 
  

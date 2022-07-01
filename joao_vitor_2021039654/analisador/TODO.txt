@@ -14,12 +14,13 @@
 - Analisamem
 
 PROBLEMAS
-- 1 = Copia de ocasioes
-- 3 = Copia de Ronaldo sem formatacao
-- 4 = Copia da palavra adshgadshgvgvadshgdhgddd 
-- 5 = Copia de guard-costas
-- 6 = Copia de guard-costas
-- 7 = Inumero erros de falta de ordem em 1 caso, sem agrupamento , numero some da ultima posicao
-- 8 = Inumero erros de falta de ordem em 3 casos, sem agrupamento , numero some da ultima posicao
-- 9 = Copia de preto
-- 10 = Copia de preto
+- 1 = Certo
+- 2 = Certo
+- 3 = Falta remover um .
+- 4 = Certo
+- 5 = Certo
+- 6 = Certo
+- 7 = Certo
+- 8 = troca de valores numericos
+- 9 = Certo
+- 10 = Certo
