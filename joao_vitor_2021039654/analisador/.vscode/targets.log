@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Fri Jul  1 01:29:58 2022
+# Make data base, printed on Fri Jul  1 02:06:21 2022
 
 # Variables
 
@@ -228,7 +227,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 01:29:45.397479807
+#  Last modified 2022-07-01 02:01:26.987490278
 #  File has been updated.
 #  Successfully updated.
 
@@ -275,13 +274,13 @@ use: bin//analisador.out
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
+ 
 # automatic
 # @ := use
 # automatic
 # % := 
 # automatic
 # * := 
- 
 # automatic
 # + := bin//analisador.out
 # automatic
@@ -295,7 +294,7 @@ use: bin//analisador.out
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt" -M 5
+	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt"
 
 # Not a target:
 include//msgassert.h:
@@ -314,7 +313,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-01 01:29:48.357479823
+#  Last modified 2022-07-01 02:01:30.547490298
 #  File has been updated.
 #  Successfully updated.
 
@@ -352,6 +351,6 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 # strcache performance: lookups = 67 / hit rate = 46%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Fri Jul  1 01:29:58 2022
+# Finished Make data base on Fri Jul  1 02:06:21 2022
 
  

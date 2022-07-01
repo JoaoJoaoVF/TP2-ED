@@ -19,6 +19,7 @@ public:
     int id;
     int repeticoes = 1;
     int simples = 0;
+    int contado = 0;
 
     bool operator<(Analisador Analisador)
     {
@@ -95,7 +96,7 @@ void ImprimeOrdemLexicograficadasPalavras(Analisador Analisador[], int qtde_pala
 void ImprimeOrdemLexicografica(char Letras[]);
 void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[]);
 void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_extraida[]);
-int BuscaRepeticao(Analisador Analisador[], int qtde_palavras, string palavra_extraida);
+void BuscaRepeticao(Analisador Analisador[], int qtde_palavras); //, string palavra_extraida);
 int EncontraIndiceLexicografico(Analisador *Analisador, int pos_a, int pos_b);
 void Particao(char Esq, char Dir, int *i, int *j, Analisador *Analisador);
 void QuickSort(Analisador *Analisador, int n);

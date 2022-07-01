@@ -52,23 +52,29 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
 }
 
 // Realiza a busca da repeticao da palavra
-int BuscaRepeticao(Analisador Analisador[], int qtde_palavras, string palavra_buscada)
+void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palavra_buscada)
 {
     // Variavel que define a quantidade de vezes em que a palavra aparece no texto
-    int encontrou = 0;
+    // int encontrou = 0;
 
     // Loop que compara as palavras e em caso de encontrar uma correspondencia incrementa a variavel exclusiva para isso
     for (int i = 0; i < qtde_palavras; i++)
     {
-        if (Analisador[i].palavra_do_texto == palavra_buscada)
+        for (int j = i + 1; j < qtde_palavras; j++)
         {
-            Analisador[i].repeticoes++;
-            encontrou++;
+            if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto)
+            {
+                // cout << "dsadad" << endl;
+                Analisador[i].repeticoes++;
+                Analisador[j].contado++;
+                // encontrou++;
+            }
+            // cout << Analisador[i].palavra_do_texto << endl;
         }
     }
 
     // Retorna a quantidade de repeticoes da palavra no texto
-    return encontrou;
+    // return encontrou;
 }
 
 void ImprimePalavras(Analisador Analisador[], int qtde_palavras)
@@ -89,7 +95,10 @@ void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
     {
+        // if (Analisador[i].contado == 0)
+        // {
         saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+        // }
     }
 
     // Realiza a finalização do conteudo e fecha o arquivo de saida
@@ -98,7 +107,10 @@ void EsquemaSaida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 
     for (int i = 0; i < qtde_palavras; i++)
     {
+        // if (Analisador[i].contado == 0)
+        // {
         cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+        // }
     }
 
     cout << "#FIM" << endl;

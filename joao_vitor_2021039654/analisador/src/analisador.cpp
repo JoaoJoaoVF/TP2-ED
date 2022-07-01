@@ -92,8 +92,10 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
     AtribuiOrdem(Analisador_do_arquivo, posicao_palavra, lexicografia);
     // ImprimeOrdemLexicograficadasPalavras(Analisador_do_arquivo, posicao_palavra);
 
+    BuscaRepeticao(Analisador_do_arquivo, posicao_palavra - 1);
+
     int b = 0;
-    for (int a = 0; a < posicao_palavra; a++)
+    for (int a = 0; a < posicao_palavra - 1; a++)
     {
         b++;
         if (b == Mediana)
@@ -103,12 +105,12 @@ void AnalisaQuickSort(int Mediana, char *arquivo_entrada, char *arquivo_saida, i
         }
         else
         {
-            QuickSort(Analisador_do_arquivo, posicao_palavra);
+            QuickSort(Analisador_do_arquivo, posicao_palavra - 1);
         }
     }
-    QuickSort(Analisador_do_arquivo, posicao_palavra);
+    QuickSort(Analisador_do_arquivo, posicao_palavra - 1);
 
-    EsquemaSaida(Analisador_do_arquivo, posicao_palavra, arquivo_saida);
+    EsquemaSaida(Analisador_do_arquivo, posicao_palavra - 1, arquivo_saida);
 
     // Realiza o fechamento do arquivo de entrada
     fclose(entrada);
