@@ -69,7 +69,7 @@ void parse_args(int argc, char **argv)
         }
 
     // verificacao da consistencia das opcoes
-    erroAssert(M > 0, "Necessario passar um valor de Mediana");
+    // erroAssert(M > 0, "Necessario passar um valor de Mediana");
 }
 
 int main(int argc, char **argv)

@@ -1,5 +1,4 @@
-ronaldo. 1
-ronaldo.. 1
+ronaldo... 2
 d 1
 f 1
 g 1

@@ -29,7 +29,11 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
     tam = strlen(palavra_extraida);
 
     // Em caso de haver um caracter especial diferente de '-' na palavra de acordo com sua posicação na tabela ASCII
-    if (palavra_extraida[tam - 1] < 65 && palavra_extraida[tam - 1] != 45)
+    if (((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
+         (palavra_extraida[tam - 1] > 58 && palavra_extraida[tam - 1] < 65) ||
+         (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
+         (palavra_extraida[tam - 1] > 122)) &&
+        (palavra_extraida[tam - 1] != 45))
     {
         palavra_extraida[tam - 1] = 0;
     }
@@ -207,12 +211,12 @@ void Particao(int Esq, int Dir, int *i, int *j, Analisador Analisador[])
     *j = Dir;
 
     // Arrumar essa parte da mediana
-    //  if (Analisador[*i].mediana > (*i + *j) / 2)
-    //  {
-    //      x = Analisador[*i].mediana / 2;
-    //  }
-    //  else
-    //  {
+    // if (Analisador[*i].mediana >= *i && Analisador[*i].mediana <= *j) //(Analisador[*i].mediana > (*i + *j) / 2)
+    // {
+    //     x = Analisador[*i].mediana / 2;
+    // }
+    // else
+    // {
     x = (*i + *j) / 2; /* obtem o pivo x */
     // }
 
