@@ -20,7 +20,7 @@ using namespace std;
     }
 
 // Faz a conversao da palavra para minusculo, remove os caracteres especias da palavra
-void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_extraida[])
+void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_extraida[])
 {
     // variaveis auxiliares de tamanho da palavra e para o loop
     int tam, i;
@@ -29,11 +29,10 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
     tam = strlen(palavra_extraida);
 
     // Em caso de haver um caracter especial diferente de '-' na palavra de acordo com sua posicação na tabela ASCII
-    if (((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
-         (palavra_extraida[tam - 1] > 57 && palavra_extraida[tam - 1] < 65) ||
-         (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
-         (palavra_extraida[tam - 1] > 122)) &&
-        (palavra_extraida[tam - 1] != 45))
+    if ((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
+        (palavra_extraida[tam - 1] > 57 && palavra_extraida[tam - 1] < 65) ||
+        (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
+        (palavra_extraida[tam - 1] > 122))
     {
         palavra_extraida[tam - 1] = 0;
     }
@@ -48,7 +47,7 @@ void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_
     }
 
     // Atribui a palavra com todas as letras minusculas para ela mesmo
-    Analisador[qtde_palavras].palavra_do_texto = resultado;
+    Analisador[pos_palavra].palavra_do_texto = resultado;
 }
 
 // Realiza a busca da repeticao da palavra
@@ -75,9 +74,6 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palav
         }
         Analisador[i].repeticoes = reps;
     }
-
-    // Retorna a quantidade de repeticoes da palavra no texto
-    // return encontrou;
 }
 
 // Realiza a escrita do resultado num arquivo txt

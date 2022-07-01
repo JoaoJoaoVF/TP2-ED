@@ -110,12 +110,10 @@ void ImprimeOrdemLexicograficadasPalavras(Analisador Analisador[], int qtde_pala
 void ImprimeOrdemLexicografica(char Letras[]);
 
 void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[]);
-void ConverteMinusculo(Analisador Analisador[], int qtde_palavras, char palavra_extraida[]);
-void BuscaRepeticao(Analisador Analisador[], int qtde_palavras); //, string palavra_extraida);
-int EncontraIndiceLexicografico(Analisador *Analisador, int pos_a, int pos_b);
+void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_extraida[]);
+void BuscaRepeticao(Analisador Analisador[], int qtde_palavras);
 
-void ContaRepeticao(Analisador Analisador[], int qtde_palavras);
-void Selecao(Analisador Analisador[], int qtde_palavras, int final, int inicio);
+void Selecao(Analisador Analisador[], int final, int inicio);
 void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida);
 
 void Particao(char Esq, char Dir, int *i, int *j, Analisador *Analisador);
