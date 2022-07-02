@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul  2 01:09:16 2022
+# Make data base, printed on Sat Jul  2 17:04:48 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-390e8856-62d0-4fe1-b6aa-b66b13a2ad22.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-87971972-5e1e-4f49-8faa-69f652ab515a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -81,7 +81,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/20069_interop
+WSL_INTEROP = /run/WSL/18538_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -175,9 +175,9 @@ SAIDA = ./saida/
 
 # Directories
 
-# . (device 2064, inode 100590): 11 files, no impossibilities.
+# . (device 2064, inode 100590): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,7 +229,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//Execucao.hpp includ
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 00:44:39.55266608
+#  Last modified 2022-07-02 17:04:47.458672659
 #  File has been updated.
 #  Successfully updated.
 
@@ -296,7 +296,7 @@ use: bin//analisador.out
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 27):
-	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" 
+	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" -l
 
 # Not a target:
 include//msgassert.h:
@@ -315,7 +315,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 00:44:32.842665966
+#  Last modified 2022-07-02 17:04:39.008672613
 #  File has been updated.
 #  Successfully updated.
 
@@ -347,12 +347,12 @@ obj//Analisador.o: include//memlog.h include//msgassert.h include//Execucao.hpp 
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 373 B / avg = 11 B
-# current buf: size = 8162 B / used = 373 B / count = 32 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 383 B / avg = 11 B
+# current buf: size = 8162 B / used = 383 B / count = 33 / avg = 11 B
 
-# strcache performance: lookups = 63 / hit rate = 49%
+# strcache performance: lookups = 64 / hit rate = 48%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/63=2%
-# Finished Make data base on Sat Jul  2 01:09:16 2022
+# Load=33/8192=0%, Rehash=0, Collisions=1/64=2%
+# Finished Make data base on Sat Jul  2 17:04:48 2022
 
  

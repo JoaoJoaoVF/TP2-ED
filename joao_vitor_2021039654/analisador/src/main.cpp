@@ -5,7 +5,7 @@ using namespace std;
 // variaveis globais para opcoes
 char nome_entrada[100];
 char nome_saida[100];
-int M, S;
+int M, S, regmem;
 
 void uso()
 // Descricao: imprime as opcoes de uso
@@ -32,10 +32,11 @@ void parse_args(int argc, char **argv)
 
     // inicializacao variaveis globais para opcoes
     S = 0;
+    regmem = 0;
 
     // getopt - letra indica a opcao, : junto a letra indica parametro
     // no caso de escolher mais de uma operacao, vale a ultima
-    while ((c = getopt(argc, argv, "I:i:M:m:S:s:O:o:h")) != EOF)
+    while ((c = getopt(argc, argv, "I:i:M:m:S:s:O:o:h:l")) != EOF)
         switch (c)
         {
         case 'I':
@@ -60,7 +61,7 @@ void parse_args(int argc, char **argv)
         case 's':
             S = atoi(optarg);
             erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
-            avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
+            avisoAssert(S < 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
             break;
         case 'O':
             strcpy(nome_saida, optarg);
@@ -68,7 +69,9 @@ void parse_args(int argc, char **argv)
         case 'o':
             strcpy(nome_saida, optarg);
             break;
-
+        case 'l':
+            regmem = 1;
+            break;
         case 'h':
         default:
             uso();
@@ -86,7 +89,17 @@ int main(int argc, char **argv)
     // Inicia o memlog
     char nome[30] = "./bin/analisador_log.out";
     iniciaMemLog(nome);
-    ativaMemLog();
+    // ativaMemLog();
+
+    // ativar ou nao o registro de acesso
+    if (regmem == 1)
+    {
+        ativaMemLog();
+    }
+    else
+    {
+        desativaMemLog();
+    }
 
     // Testa se os arquivos de entrada e saida
     FILE *entrada = fopen(nome_entrada, "r");
