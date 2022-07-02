@@ -24,7 +24,7 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" 
+	$(EXE) -i "./entrada/11.txt" -o "./saida/11.txt" 
 #	$(EXE) -i "./entrada/2.txt" -o "./saida/2.txt"
 #	$(EXE) -i "./entrada/3.txt" -o "./saida/3.txt"
 #	$(EXE) -i "./entrada/4.txt" -o "./saida/4.txt"
