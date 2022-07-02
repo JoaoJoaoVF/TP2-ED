@@ -16,7 +16,7 @@ INC = ./include/
 BIN = ./bin/
 SAIDA = ./saida/
 OBJS = $(OBJ)/Execucao.o $(OBJ)/Analisador.o $(OBJ)/main.o $(OBJ)/memlog.o
-HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/Execucao.hpp $(INC)/Analisador.hpp
+HDRS = $(INC)/memlog.hpp $(INC)/msgassert.hpp $(INC)/Execucao.hpp $(INC)/Analisador.hpp
 CFLAGS = -pg -Wall -c -I$(INC)
 
 EXE = $(BIN)/analisador.out
@@ -49,8 +49,8 @@ $(OBJ)/Execucao.o: $(HDRS) $(SRC)/Execucao.cpp
 $(OBJ)/Analisador.o: $(HDRS) $(SRC)/Analisador.cpp
 	$(CC)  $(CFLAGS) -o $(OBJ)/Analisador.o $(SRC)/Analisador.cpp 
 
-$(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.c
-	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
+$(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.cpp
 
 clean:
 	rm -f $(EXE)* $(OBJS)* $(SAIDA)* $(BIN)* gmon.out

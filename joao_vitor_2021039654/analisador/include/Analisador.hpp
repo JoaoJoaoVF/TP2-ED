@@ -6,8 +6,8 @@
 #include <iostream>
 #include <cstring>
 #include "Execucao.hpp"
-#include "memlog.h"
-#include "msgassert.h"
+#include "memlog.hpp"
+#include "msgassert.hpp"
 using namespace std;
 
 class Analisador

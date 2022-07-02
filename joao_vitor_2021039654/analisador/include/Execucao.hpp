@@ -6,8 +6,8 @@
 #include <iostream>
 #include <iostream>
 #include <fstream>
-#include "memlog.h"
-#include "msgassert.h"
+#include "memlog.hpp"
+#include "msgassert.hpp"
 using namespace std;
 
 void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simples);
