@@ -1,4 +1,4 @@
-#include "../include/analisador.hpp"
+#include "../include/Execucao.hpp"
 
 using namespace std;
 
@@ -46,15 +46,21 @@ void parse_args(int argc, char **argv)
             break;
         case 'M':
             M = atoi(optarg);
+            erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
             break;
         case 'm':
             M = atoi(optarg);
+            erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
             break;
         case 'S':
             S = atoi(optarg);
+            erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
+            avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
             break;
         case 's':
             S = atoi(optarg);
+            erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
+            avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
             break;
         case 'O':
             strcpy(nome_saida, optarg);
@@ -69,7 +75,7 @@ void parse_args(int argc, char **argv)
         }
 
     // verificacao da consistencia das opcoes
-    erroAssert(M > 0, "Necessario passar um valor de Mediana");
+    // erroAssert(M > 0, "Necessario passar um valor de Mediana");
 }
 
 int main(int argc, char **argv)
@@ -78,7 +84,7 @@ int main(int argc, char **argv)
     parse_args(argc, argv);
 
     // Inicia o memlog
-    char nome[22] = "./analisador_log.out";
+    char nome[30] = "./bin/analisador_log.out";
     iniciaMemLog(nome);
     ativaMemLog();
 
@@ -91,7 +97,7 @@ int main(int argc, char **argv)
     fclose(saida);
 
     // Chama a funcao resposavel pela execucao do programa
-    AnalisaQuickSort(M, nome_entrada, nome_saida, S);
+    Executa(M, nome_entrada, nome_saida, S);
 
     // finaliza a analise de tempo
     return finalizaMemLog();

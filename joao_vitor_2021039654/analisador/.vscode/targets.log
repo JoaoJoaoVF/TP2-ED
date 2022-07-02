@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 13:48:17 2022
+# Make data base, printed on Sat Jul  2 01:09:16 2022
 
 # Variables
 
@@ -28,7 +28,7 @@ VSCODE_LOG_NATIVE = false
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
-# makefile (from 'Makefile', line 21)
+# makefile (from 'Makefile', line 22)
 EXE = $(BIN)/analisador.out
 # automatic
 @F = $(notdir $@)
@@ -42,10 +42,10 @@ BIN = ./bin/
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/jvf/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/jvf/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/jvf/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/jvf/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
+# makefile (from 'Makefile', line 20)
+CFLAGS = -pg -Wall -c -I$(INC)
 # makefile (from 'Makefile', line 19)
-CFLAGS = -g -Wall -c -I$(INC)
-# makefile (from 'Makefile', line 18)
-HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/analisador.hpp $(INC)/ordenacao.hpp
+HDRS = $(INC)/memlog.h $(INC)/msgassert.h $(INC)/Execucao.hpp $(INC)/Analisador.hpp
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
@@ -54,8 +54,8 @@ GNUMAKEFLAGS :=
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 17)
-OBJS = $(OBJ)/analisador.o $(OBJ)/ordenacao.o $(OBJ)/main.o $(OBJ)/memlog.o
+# makefile (from 'Makefile', line 18)
+OBJS = $(OBJ)/Execucao.o $(OBJ)/Analisador.o $(OBJ)/main.o $(OBJ)/memlog.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -67,7 +67,7 @@ PATH = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b98a590a-a85b-489d-bd2b-90c9f4720bfa.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-390e8856-62d0-4fe1-b6aa-b66b13a2ad22.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -81,7 +81,7 @@ PWD = /home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/28_interop
+WSL_INTEROP = /run/WSL/20069_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -164,8 +164,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# makefile (from 'Makefile', line 17)
+SAIDA = ./saida/
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=15/143=10%
+# Load=78/1024=8%, Rehash=0, Collisions=15/144=10%
 
 # Pattern-specific Variable Values
 
@@ -173,9 +175,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 100590): 15 files, no impossibilities.
+# . (device 2064, inode 100590): 11 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -183,12 +185,12 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
-obj//ordenacao.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/ordenacao.cpp
+obj//Execucao.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/Execucao.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
-	$(CC)  $(CFLAGS) -o $(OBJ)/ordenacao.o $(SRC)/ordenacao.cpp 
+#  recipe to execute (from 'Makefile', line 47):
+	$(CC)  $(CFLAGS) -o $(OBJ)/Execucao.o $(SRC)/Execucao.cpp 
 
 # Not a target:
 include//memlog.h:
@@ -211,11 +213,11 @@ all: use
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
-obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/main.cpp
+obj//main.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+#  recipe to execute (from 'Makefile', line 44):
 	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
 
 # Not a target:
@@ -227,37 +229,37 @@ obj//main.o: include//memlog.h include//msgassert.h include//analisador.hpp incl
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 13:48:17.332904627
+#  Last modified 2022-07-02 00:44:39.55266608
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-include//analisador.hpp:
+include//Analisador.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/analisador.cpp:
+src/Analisador.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-bin//analisador: obj//analisador.o obj//ordenacao.o obj//main.o obj//memlog.o
+bin//analisador: obj//Execucao.o obj//Analisador.o obj//main.o obj//memlog.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
+#  recipe to execute (from 'Makefile', line 41):
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
 
 # Not a target:
-include//ordenacao.hpp:
+include//Execucao.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/ordenacao.cpp:
+src/Execucao.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -273,8 +275,8 @@ use: bin//analisador.out
 #  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
  
+#  Needs to be updated (-q is set).
 # automatic
 # @ := use
 # automatic
@@ -293,8 +295,8 @@ use: bin//analisador.out
 # ? := bin//analisador.out
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/13=15%
-#  recipe to execute (from 'Makefile', line 26):
-	$(EXE) -i "./entrada/1.txt" -o "./saida/saida1.txt" -M 10 -s 5
+#  recipe to execute (from 'Makefile', line 27):
+	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" 
 
 # Not a target:
 include//msgassert.h:
@@ -306,14 +308,14 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
-	rm -f $(EXE) $(OBJS) 
+#  recipe to execute (from 'Makefile', line 56):
+	rm -f $(EXE)* $(OBJS)* $(SAIDA)* $(BIN)* gmon.out
 	clear 
 
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 13:47:12.752904271
+#  Last modified 2022-07-02 00:44:32.842665966
 #  File has been updated.
 #  Successfully updated.
 
@@ -323,19 +325,19 @@ src/main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj//memlog.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/memlog.c
+obj//memlog.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/memlog.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 53):
 	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
 
-obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hpp include//ordenacao.hpp src/analisador.cpp
+obj//Analisador.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/Analisador.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
-	$(CC)  $(CFLAGS) -o $(OBJ)/analisador.o $(SRC)/analisador.cpp 
+#  recipe to execute (from 'Makefile', line 50):
+	$(CC)  $(CFLAGS) -o $(OBJ)/Analisador.o $(SRC)/Analisador.cpp 
 
 # files hash-table stats:
 # Load=20/1024=2%, Rehash=0, Collisions=0/63=0%
@@ -345,12 +347,12 @@ obj//analisador.o: include//memlog.h include//msgassert.h include//analisador.hp
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 426 B / avg = 11 B
-# current buf: size = 8162 B / used = 426 B / count = 36 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 373 B / avg = 11 B
+# current buf: size = 8162 B / used = 373 B / count = 32 / avg = 11 B
 
-# strcache performance: lookups = 67 / hit rate = 46%
+# strcache performance: lookups = 63 / hit rate = 49%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Thu Jun 30 13:48:17 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/63=2%
+# Finished Make data base on Sat Jul  2 01:09:16 2022
 
  

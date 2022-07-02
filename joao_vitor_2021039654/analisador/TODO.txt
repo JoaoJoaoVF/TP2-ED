@@ -1,4 +1,4 @@
-- Ler dados do arquivo de entrada (FEITO)
+- Ler dados do arquivo de entrada (FEITO) 
 - Converter todas as letras das palavras para minusculo (FEITO)
 - Ignorar todos os casos em que ocorrem caracteres especiais (FEITO)
 - Implementar a leitura na linha de comando do nome do arquivo a ser lido pelo
@@ -7,9 +7,20 @@
   num arquivo txt pelo comando -o|-O (FEITO)
 - Implementar o quick sort para ordenação das palavras lidas seguindo a ordem dada na entrada (FEITO)
 - Implementar o algoritmo de Seleção e Inserção (FEITO)
-- Realizar a contagem das palavras repetidas ERRO COPIA NA ULTIMA
+- Realizar a contagem das palavras repetidas (FEITO)
 - Fazer a escrita do resultado no arquivo de saida (FEITO)
-- Realizar a junção da palavra com a proxima caso termine com "-"
 - Caso da Mediana (FEITO)
 - Documentacao 
 - Analisamem
+
+PROBLEMAS
+- 1 = Certo
+- 2 = Certo
+- 3 = Falta remover um .
+- 4 = Certo
+- 5 = Certo
+- 6 = Certo
+- 7 = Certo
+- 8 = troca de valores numericos
+- 9 = Certo
+- 10 = Certo
