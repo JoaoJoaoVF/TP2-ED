@@ -164,8 +164,6 @@ void Selecao(Analisador Analisador[], int final, int inicio)
     {
         Min = i;
 
-        // leMemLog((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
-
         for (j = i + 1; j < final; j++)
         {
             if (Analisador[j] < Analisador[Min])
