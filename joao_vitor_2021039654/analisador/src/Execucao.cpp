@@ -32,8 +32,6 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
     while (!feof(entrada))
     {
 
-        // leMemLog((long int)jogador[posicao].Cartas_jogador[i]._valor_carta, (long int)sizeof(int), jogador[posicao]._id);
-
         // No caso da leitura inicial ser #TEXTO
         if (tipo_de_leitura == 1)
         {

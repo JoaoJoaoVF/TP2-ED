@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul  2 00:07:11 2022
+# Make data base, printed on Sat Jul  2 01:09:16 2022
 
 # Variables
 
@@ -167,7 +167,7 @@ WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'Makefile', line 17)
 SAIDA = ./saida/
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=15/164=9%
+# Load=78/1024=8%, Rehash=0, Collisions=15/144=10%
 
 # Pattern-specific Variable Values
 
@@ -175,9 +175,9 @@ SAIDA = ./saida/
 
 # Directories
 
-# . (device 2064, inode 100590): 12 files, no impossibilities.
+# . (device 2064, inode 100590): 11 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -211,7 +211,7 @@ all: use
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/25=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 obj//main.o: include//memlog.h include//msgassert.h include//Execucao.hpp include//Analisador.hpp src/main.cpp
 #  Implicit rule search has not been done.
@@ -229,7 +229,7 @@ obj//main.o: include//memlog.h include//msgassert.h include//Execucao.hpp includ
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 00:01:35.782622423
+#  Last modified 2022-07-02 00:44:39.55266608
 #  File has been updated.
 #  Successfully updated.
 
@@ -275,6 +275,7 @@ use: bin//analisador.out
 #  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
+ 
 #  Needs to be updated (-q is set).
 # automatic
 # @ := use
@@ -293,20 +294,9 @@ use: bin//analisador.out
 # automatic
 # ? := bin//analisador.out
 # variable set hash-table stats:
- 
-# Load=8/32=25%, Rehash=0, Collisions=12/33=36%
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 27):
 	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" 
-	$(EXE) -i "./entrada/2.txt" -o "./saida/2.txt"
-	$(EXE) -i "./entrada/3.txt" -o "./saida/3.txt"
-	$(EXE) -i "./entrada/4.txt" -o "./saida/4.txt"
-	$(EXE) -i "./entrada/5.txt" -o "./saida/5.txt"
-	$(EXE) -i "./entrada/6.txt" -o "./saida/6.txt"
-	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt"
-	$(EXE) -i "./entrada/8.txt" -o "./saida/8.txt"
-	$(EXE) -i "./entrada/9.txt" -o "./saida/9.txt"
-	$(EXE) -i "./entrada/10.txt" -o "./saida/10.txt"
-	$(EXE) -i "./entrada/11.txt" -o "./saida/11.txt"
 
 # Not a target:
 include//msgassert.h:
@@ -325,7 +315,7 @@ clean:
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 00:01:38.852622474
+#  Last modified 2022-07-02 00:44:32.842665966
 #  File has been updated.
 #  Successfully updated.
 
@@ -357,12 +347,12 @@ obj//Analisador.o: include//memlog.h include//msgassert.h include//Execucao.hpp 
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 383 B / avg = 11 B
-# current buf: size = 8162 B / used = 383 B / count = 33 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 373 B / avg = 11 B
+# current buf: size = 8162 B / used = 373 B / count = 32 / avg = 11 B
 
-# strcache performance: lookups = 64 / hit rate = 48%
+# strcache performance: lookups = 63 / hit rate = 49%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=1/64=2%
-# Finished Make data base on Sat Jul  2 00:07:11 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/63=2%
+# Finished Make data base on Sat Jul  2 01:09:16 2022
 
  
