@@ -32,9 +32,6 @@ public:
         // Realiza o ate que as duas palavras acabem
         while (a >= 0 && b >= 0)
         {
-            leMemLog((long int)this->lexicografica_da_ordem[i], (long int)sizeof(int), this->id);
-            leMemLog((long int)Analisador.lexicografica_da_ordem[i], (long int)sizeof(int), Analisador.id);
-
             // Em caso das duas letras das palavras serem ighuais na mesma posicao a proxima letra é analisada
             if (this->lexicografica_da_ordem[i] == Analisador.lexicografica_da_ordem[i])
             {
@@ -70,19 +67,11 @@ public:
 
     bool operator>(Analisador Analisador)
     {
-        // Variaveis utilizadas
         int i = 0, a = 0, b = 0;
-
-        // Seta o a e b, para o tamanho das strings analisadas
         a = this->palavra_do_texto.length();
         b = Analisador.palavra_do_texto.length();
-
-        // Realiza o ate que as duas palavras acabem
         while (a >= 0 && b >= 0)
         {
-            leMemLog((long int)this->lexicografica_da_ordem[i], (long int)sizeof(int), this->id);
-            leMemLog((long int)Analisador.lexicografica_da_ordem[i], (long int)sizeof(int), Analisador.id);
-
             if (this->lexicografica_da_ordem[i] == Analisador.lexicografica_da_ordem[i])
             {
                 i++;

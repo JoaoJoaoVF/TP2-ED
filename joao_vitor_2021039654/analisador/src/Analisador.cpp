@@ -37,15 +37,11 @@ void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[])
             // Loop que percorre o novo alfabeto do inicio ao fim
             for (k = 0; k < 26; k++)
             {
-                leMemLog((long int)Analisador[i].palavra_do_texto[j], (long int)sizeof(char), Analisador[i].id);
-
                 // Em caso de um encontro de letras iguais a posicao relativa da letra no vetor é
                 // guardada no vetor na posicao relativa dessa letra na palavra
                 if (Analisador[i].palavra_do_texto[j] == tolower(Letras[k]))
                 {
                     Analisador[i].lexicografica_da_ordem[j] = k;
-
-                    ESCREVEMEMLOG((long int)Analisador[i].lexicografica_da_ordem[j], (long int)sizeof(int), Analisador[i].id);
                 }
             }
         }
@@ -60,8 +56,6 @@ void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_ex
 
     // Retorna o tamanho total da palvavra
     tam = strlen(palavra_extraida);
-
-    leMemLog((long int)Analisador[pos_palavra].palavra_do_texto[tam - 1], (long int)Analisador[pos_palavra].palavra_do_texto.length() * sizeof(char), Analisador[pos_palavra].id);
 
     // Em caso de haver um caracter especial diferente de '-' na palavra de acordo com sua posicação na tabela ASCII
     if ((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
@@ -83,8 +77,6 @@ void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_ex
 
     // Atribui a palavra com todas as letras minusculas para ela mesmo
     Analisador[pos_palavra].palavra_do_texto = resultado;
-    ESCREVEMEMLOG((long int)Analisador[pos_palavra].palavra_do_texto[0], (long int)Analisador[pos_palavra].palavra_do_texto.length() * sizeof(char), Analisador[pos_palavra].id);
-    // ESCREVEMEMLOG((long int)jogador[posicao].Cartas_jogador[i]._carta[0], (long int)jogador[posicao].Cartas_jogador[i]._carta.length() * sizeof(char), jogador[posicao]._id);
 }
 
 // Realiza a busca da repeticao da palavra
@@ -99,25 +91,17 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palav
         reps = 0;
         for (int j = 0; j < qtde_palavras; j++)
         {
-            leMemLog((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto.length() * sizeof(char), Analisador[i].id);
-            leMemLog((long int)Analisador[j].palavra_do_texto[0], (long int)Analisador[j].palavra_do_texto.length() * sizeof(char), Analisador[j].id);
-
             if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto && Analisador[j].contado != -1)
             {
                 reps++;
                 // cout << "dsadad" << endl;
                 // Analisador[i].repeticoes++;
                 Analisador[j].contado = -1;
-
-                ESCREVEMEMLOG((long int)Analisador[j].contado, (long int)sizeof(int), Analisador[j].id);
-
                 // encontrou++;
             }
             // cout << Analisador[i].palavra_do_texto << endl;
         }
         Analisador[i].repeticoes = reps;
-
-        ESCREVEMEMLOG((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
     }
 }
 
@@ -130,13 +114,9 @@ void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
     {
-        leMemLog((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
-
         if (Analisador[i].repeticoes > 0)
         {
             saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-
-            // leMemLog((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto[0] * sizeof(char), Analisador[i].id);
         }
     }
 
@@ -172,26 +152,12 @@ void Selecao(Analisador Analisador[], int final, int inicio)
 
         // Troca dos dados em caso de mudanca;
         Troca_string(Analisador[i].palavra_do_texto, Analisador[Min].palavra_do_texto);
-
-        ESCREVEMEMLOG((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto.length() * sizeof(char), Analisador[i].id);
-        ESCREVEMEMLOG((long int)Analisador[Min].palavra_do_texto[0], (long int)Analisador[Min].palavra_do_texto.length() * sizeof(char), Analisador[Min].id);
-
         for (int teste = 0; teste < 1000; teste++)
         {
             Troca_int(Analisador[i].lexicografica_da_ordem[teste], Analisador[Min].lexicografica_da_ordem[teste]);
-
-            ESCREVEMEMLOG((long int)Analisador[i].lexicografica_da_ordem[teste], (long int)sizeof(int), Analisador[i].id);
-            ESCREVEMEMLOG((long int)Analisador[Min].lexicografica_da_ordem[teste], (long int)sizeof(int), Analisador[Min].id);
         }
         Troca_int(Analisador[i].id, Analisador[Min].id);
-
-        ESCREVEMEMLOG((long int)Analisador[i].id, (long int)sizeof(int), Analisador[i].id);
-        ESCREVEMEMLOG((long int)Analisador[Min].id, (long int)sizeof(int), Analisador[Min].id);
-
         Troca_int(Analisador[i].repeticoes, Analisador[Min].repeticoes);
-
-        ESCREVEMEMLOG((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
-        ESCREVEMEMLOG((long int)Analisador[Min].repeticoes, (long int)sizeof(int), Analisador[Min].id);
     }
 }
 
@@ -217,29 +183,13 @@ void Particao(int Esq, int Dir, int *i, int *j, Analisador Analisador[])
         }
         if (*i <= *j)
         {
-            // Troca dos dados em caso de mudanca;
             Troca_string(Analisador[*i].palavra_do_texto, Analisador[*j].palavra_do_texto);
-
-            ESCREVEMEMLOG((long int)Analisador[*i].palavra_do_texto[0], (long int)Analisador[*i].palavra_do_texto.length() * sizeof(char), Analisador[*i].id);
-            ESCREVEMEMLOG((long int)Analisador[*j].palavra_do_texto[0], (long int)Analisador[*j].palavra_do_texto.length() * sizeof(char), Analisador[*j].id);
-
             for (int teste = 0; teste < 1000; teste++)
             {
                 Troca_int(Analisador[*i].lexicografica_da_ordem[teste], Analisador[*j].lexicografica_da_ordem[teste]);
-
-                ESCREVEMEMLOG((long int)Analisador[*i].lexicografica_da_ordem[teste], (long int)sizeof(int), Analisador[*i].id);
-                ESCREVEMEMLOG((long int)Analisador[*j].lexicografica_da_ordem[teste], (long int)sizeof(int), Analisador[*j].id);
             }
             Troca_int(Analisador[*i].id, Analisador[*j].id);
-
-            ESCREVEMEMLOG((long int)Analisador[*i].id, (long int)sizeof(int), Analisador[*i].id);
-            ESCREVEMEMLOG((long int)Analisador[*j].id, (long int)sizeof(int), Analisador[*j].id);
-
             Troca_int(Analisador[*i].repeticoes, Analisador[*j].repeticoes);
-
-            ESCREVEMEMLOG((long int)Analisador[*i].repeticoes, (long int)sizeof(int), Analisador[*i].id);
-            ESCREVEMEMLOG((long int)Analisador[*j].repeticoes, (long int)sizeof(int), Analisador[*j].id);
-
             (*i)++;
             (*j)--;
         }

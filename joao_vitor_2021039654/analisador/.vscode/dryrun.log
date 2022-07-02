@@ -1,5 +1,15 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
 ./bin//analisador.out -i "./entrada/1.txt" -o "./saida/1.txt" 
+./bin//analisador.out -i "./entrada/2.txt" -o "./saida/2.txt"
+./bin//analisador.out -i "./entrada/3.txt" -o "./saida/3.txt"
+./bin//analisador.out -i "./entrada/4.txt" -o "./saida/4.txt"
+./bin//analisador.out -i "./entrada/5.txt" -o "./saida/5.txt"
+./bin//analisador.out -i "./entrada/6.txt" -o "./saida/6.txt"
+./bin//analisador.out -i "./entrada/7.txt" -o "./saida/7.txt"
+./bin//analisador.out -i "./entrada/8.txt" -o "./saida/8.txt"
+./bin//analisador.out -i "./entrada/9.txt" -o "./saida/9.txt"
+./bin//analisador.out -i "./entrada/10.txt" -o "./saida/10.txt"
+./bin//analisador.out -i "./entrada/11.txt" -o "./saida/11.txt"
 make: Leaving directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
  
