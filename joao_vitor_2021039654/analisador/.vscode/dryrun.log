@@ -1,7 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
-rm -f bin//analisador.out 
-cp bin//analisador bin//analisador.out
 ./bin//analisador.out -i "./entrada/1.txt" -o "./saida/1.txt" 
 ./bin//analisador.out -i "./entrada/2.txt" -o "./saida/2.txt"  
 ./bin//analisador.out -i "./entrada/3.txt" -o "./saida/3.txt" 
