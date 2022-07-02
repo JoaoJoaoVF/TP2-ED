@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul  2 17:44:40 2022
+# Make data base, printed on Sat Jul  2 18:34:33 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_langu
 # environment
 _ = /home/jvf/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
 # makefile (from 'Makefile', line 20)
-CFLAGS = -pg -Wall -c -I$(INC)
+CFLAGS = -pg -Wall -c -I$(INC) 
 # makefile (from 'Makefile', line 19)
 HDRS = $(INC)/memlog.hpp $(INC)/msgassert.hpp $(INC)/Execucao.hpp $(INC)/Analisador.hpp
 # makefile (from 'Makefile', line 1)
@@ -74,6 +74,9 @@ VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-87971972-5e1e-4f49-8faa-69f652ab515a.sock
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
 %F = $(notdir $%)
+ 
+make: *** No rule to make target 'bin//analisador.out', needed by 'use'.  Stop.
+
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -167,7 +170,7 @@ WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'Makefile', line 17)
 SAIDA = ./saida/
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=15/164=9%
+# Load=78/1024=8%, Rehash=0, Collisions=15/139=11%
 
 # Pattern-specific Variable Values
 
@@ -189,35 +192,26 @@ obj//Execucao.o: include//memlog.hpp include//msgassert.hpp include//Execucao.hp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 47):
+#  recipe to execute (from 'Makefile', line 37):
 	$(CC)  $(CFLAGS) -o $(OBJ)/Execucao.o $(SRC)/Execucao.cpp 
 
 all: use
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/25=0%
+#  File has not been updated.
 
 obj//main.o: include//memlog.hpp include//msgassert.hpp include//Execucao.hpp include//Analisador.hpp src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
+#  recipe to execute (from 'Makefile', line 34):
 	$(CC)  $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp 
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 17:14:05.868675734
+#  Last modified 2022-07-02 18:25:28.850588626
 #  File has been updated.
 #  Successfully updated.
 
@@ -249,7 +243,7 @@ bin//analisador: obj//Execucao.o obj//Analisador.o obj//main.o obj//memlog.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 31):
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)
 
 # Not a target:
@@ -272,56 +266,24 @@ src/Execucao.cpp:
 
 use: bin//analisador.out
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has been updated.
- 
-#  Needs to be updated (-q is set).
-# automatic
-# @ := use
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := bin//analisador.out
-# automatic
-# | := 
-# automatic
-# < := bin//analisador.out
-# automatic
-# ^ := bin//analisador.out
-# automatic
-# ? := bin//analisador.out
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=12/33=36%
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 27):
 	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt" 
-	$(EXE) -i "./entrada/2.txt" -o "./saida/2.txt"  
-	$(EXE) -i "./entrada/3.txt" -o "./saida/3.txt" 
-	$(EXE) -i "./entrada/4.txt" -o "./saida/4.txt" 
-	$(EXE) -i "./entrada/5.txt" -o "./saida/5.txt"  
-	$(EXE) -i "./entrada/6.txt" -o "./saida/6.txt" 
-	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt" 
-	$(EXE) -i "./entrada/8.txt" -o "./saida/8.txt" 
-	$(EXE) -i "./entrada/9.txt" -o "./saida/9.txt" 
-	$(EXE) -i "./entrada/10.txt" -o "./saida/10.txt" 
-	$(EXE) -i "./entrada/11.txt" -o "./saida/11.txt" 
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 56):
+#  recipe to execute (from 'Makefile', line 46):
 	rm -f $(EXE)* $(OBJS)* $(SAIDA)* $(BIN)* gmon.out
 	clear 
 
 # Not a target:
 bin//analisador.out:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-02 17:27:16.008680085
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 src/main.cpp:
@@ -333,14 +295,14 @@ obj//memlog.o: include//memlog.hpp include//msgassert.hpp include//Execucao.hpp 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 53):
+#  recipe to execute (from 'Makefile', line 43):
 	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.cpp
 
 obj//Analisador.o: include//memlog.hpp include//msgassert.hpp include//Execucao.hpp include//Analisador.hpp src/Analisador.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 50):
+#  recipe to execute (from 'Makefile', line 40):
 	$(CC)  $(CFLAGS) -o $(OBJ)/Analisador.o $(SRC)/Analisador.cpp 
 
 # Not a target:
@@ -350,7 +312,7 @@ include//msgassert.hpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/63=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/62=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -360,9 +322,9 @@ include//msgassert.hpp:
 # strcache buffers: 1 (0) / strings = 32 / storage = 379 B / avg = 11 B
 # current buf: size = 8162 B / used = 379 B / count = 32 / avg = 11 B
 
-# strcache performance: lookups = 63 / hit rate = 49%
+# strcache performance: lookups = 62 / hit rate = 48%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/63=2%
-# Finished Make data base on Sat Jul  2 17:44:40 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/62=2%
+# Finished Make data base on Sat Jul  2 18:34:33 2022
 
  

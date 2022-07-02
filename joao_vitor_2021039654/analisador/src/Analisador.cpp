@@ -84,15 +84,14 @@ void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_ex
     // Atribui a palavra com todas as letras minusculas para ela mesmo
     Analisador[pos_palavra].palavra_do_texto = resultado;
     ESCREVEMEMLOG((long int)Analisador[pos_palavra].palavra_do_texto[0], (long int)Analisador[pos_palavra].palavra_do_texto.length() * sizeof(char), Analisador[pos_palavra].id);
-    // ESCREVEMEMLOG((long int)jogador[posicao].Cartas_jogador[i]._carta[0], (long int)jogador[posicao].Cartas_jogador[i]._carta.length() * sizeof(char), jogador[posicao]._id);
 }
 
 // Realiza a busca da repeticao da palavra
-void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palavra_buscada)
+void BuscaRepeticao(Analisador Analisador[], int qtde_palavras)
 {
     // Variavel que define a quantidade de vezes em que a palavra aparece no texto
-    // int encontrou = 0;
     int reps = 0;
+
     // Loop que compara as palavras e em caso de encontrar uma correspondencia incrementa a variavel exclusiva para isso
     for (int i = 0; i < qtde_palavras; i++)
     {
@@ -105,15 +104,10 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras) //, string palav
             if (Analisador[i].palavra_do_texto == Analisador[j].palavra_do_texto && Analisador[j].contado != -1)
             {
                 reps++;
-                // cout << "dsadad" << endl;
-                // Analisador[i].repeticoes++;
                 Analisador[j].contado = -1;
 
                 ESCREVEMEMLOG((long int)Analisador[j].contado, (long int)sizeof(int), Analisador[j].id);
-
-                // encontrou++;
             }
-            // cout << Analisador[i].palavra_do_texto << endl;
         }
         Analisador[i].repeticoes = reps;
 
@@ -136,23 +130,13 @@ void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
         {
             saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
 
-            // leMemLog((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto[0] * sizeof(char), Analisador[i].id);
+            leMemLog((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto[0] * sizeof(char), Analisador[i].id);
         }
     }
 
     // Realiza a finalização do conteudo e fecha o arquivo de saida
     saida << "#FIM" << endl;
     saida.close();
-
-    // for (int i = 0; i < qtde_palavras; i++)
-    // {
-    //     if (Analisador[i].repeticoes > 0)
-    //     {
-    //         cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-    //     }
-    // }
-
-    // cout << "#FIM" << endl;
 }
 
 // Algoritmo Simples usado no trabalho, realiza a selesção da palavra do inicio e faz a troca dos dados
@@ -163,8 +147,6 @@ void Selecao(Analisador Analisador[], int final, int inicio)
     for (i = inicio; i < final - 1; i++)
     {
         Min = i;
-
-        // leMemLog((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
 
         for (j = i + 1; j < final; j++)
         {

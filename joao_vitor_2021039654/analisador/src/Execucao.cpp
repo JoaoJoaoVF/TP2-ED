@@ -38,8 +38,6 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
             // Realiza a leitura da palavra
             fscanf(entrada, "%s", Palavra);
 
-            // cout << Analisador_do_arquivo[posicao_palavra].simples << endl;
-
             if (strcmp(Palavra, "#ORDEM") == 0)
             {
                 // Quando o bloco #ORDEM é encontrado troca o tipo de leitura para 2
@@ -54,9 +52,6 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
                 Analisador_do_arquivo[posicao_palavra].simples = Simples;
                 Analisador_do_arquivo[posicao_palavra].id = posicao_palavra;
                 posicao_palavra++;
-
-                // leMemLog((long int)Palavra, (long int)sizeof(char), 0);
-                // ESCREVEMEMLOG((long int)Palavra, (long int)sizeof(char), 0);
             }
         }
         else if (tipo_de_leitura == 2)

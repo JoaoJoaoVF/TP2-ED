@@ -47,21 +47,33 @@ void parse_args(int argc, char **argv)
             break;
         case 'M':
             M = atoi(optarg);
+
+            // verificacao da consistencia das opcoes
             erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
+
             break;
         case 'm':
             M = atoi(optarg);
+
+            // verificacao da consistencia das opcoes
             erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
+
             break;
         case 'S':
             S = atoi(optarg);
+
+            // verificacao da consistencia das opcoes
             erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
             avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
+
             break;
         case 's':
             S = atoi(optarg);
+
+            // verificacao da consistencia das opcoes
             erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
             avisoAssert(S < 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
+
             break;
         case 'O':
             strcpy(nome_saida, optarg);
@@ -76,9 +88,6 @@ void parse_args(int argc, char **argv)
         default:
             uso();
         }
-
-    // verificacao da consistencia das opcoes
-    // erroAssert(M > 0, "Necessario passar um valor de Mediana");
 }
 
 int main(int argc, char **argv)
