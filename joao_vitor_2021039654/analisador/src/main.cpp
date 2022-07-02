@@ -46,15 +46,21 @@ void parse_args(int argc, char **argv)
             break;
         case 'M':
             M = atoi(optarg);
+            erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
             break;
         case 'm':
             M = atoi(optarg);
+            erroAssert(M > -1, "O valor para se usar a partição do QuickSort deve ser um numero maior que 0");
             break;
         case 'S':
             S = atoi(optarg);
+            erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
+            avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
             break;
         case 's':
             S = atoi(optarg);
+            erroAssert(S > -1, "O valor para se usar o algoritmo de seleção deve ser um numero maior que 0");
+            avisoAssert(S > 30, "O algotimo de seleção é mais eficiente com dados de tamanho menor que 30");
             break;
         case 'O':
             strcpy(nome_saida, optarg);

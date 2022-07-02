@@ -57,8 +57,8 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
                 Analisador_do_arquivo[posicao_palavra].id = posicao_palavra;
                 posicao_palavra++;
 
-                leMemLog((long int)Palavra, (long int)sizeof(char), 0);
-                ESCREVEMEMLOG((long int)Palavra, (long int)sizeof(char), 0);
+                // leMemLog((long int)Palavra, (long int)sizeof(char), 0);
+                // ESCREVEMEMLOG((long int)Palavra, (long int)sizeof(char), 0);
             }
         }
         else if (tipo_de_leitura == 2)

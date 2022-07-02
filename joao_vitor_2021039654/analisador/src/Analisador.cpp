@@ -19,6 +19,35 @@ using namespace std;
         B = int_auxiliar;     \
     }
 
+// Atribui um peso a cada letra da palavra de acordo com a nova ordem lexicografica
+void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[])
+{
+    // Variaveis auxiliares para tamanho e loops
+    int tam, i, j, k;
+
+    // Percorre todas as palavras
+    for (i = 0; i < qtde_palavras; i++)
+    {
+        // Seta o tamanho como o tamanho nominal da palvra atual do loop que sera feitas as operacoes
+        tam = Analisador[i].palavra_do_texto.length();
+
+        // Loop que percorre cada letra da palavra
+        for (j = 0; j < tam; j++)
+        {
+            // Loop que percorre o novo alfabeto do inicio ao fim
+            for (k = 0; k < 26; k++)
+            {
+                // Em caso de um encontro de letras iguais a posicao relativa da letra no vetor é
+                // guardada no vetor na posicao relativa dessa letra na palavra
+                if (Analisador[i].palavra_do_texto[j] == tolower(Letras[k]))
+                {
+                    Analisador[i].lexicografica_da_ordem[j] = k;
+                }
+            }
+        }
+    }
+}
+
 // Faz a conversao da palavra para minusculo, remove os caracteres especias da palavra
 void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_extraida[])
 {
@@ -95,44 +124,15 @@ void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
     saida << "#FIM" << endl;
     saida.close();
 
-    for (int i = 0; i < qtde_palavras; i++)
-    {
-        if (Analisador[i].repeticoes > 0)
-        {
-            cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
-        }
-    }
+    // for (int i = 0; i < qtde_palavras; i++)
+    // {
+    //     if (Analisador[i].repeticoes > 0)
+    //     {
+    //         cout << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+    //     }
+    // }
 
-    cout << "#FIM" << endl;
-}
-
-// Atribui um peso a cada letra da palavra de acordo com a nova ordem lexicografica
-void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[])
-{
-    // Variaveis auxiliares para tamanho e loops
-    int tam, i, j, k;
-
-    // Percorre todas as palavras
-    for (i = 0; i < qtde_palavras; i++)
-    {
-        // Seta o tamanho como o tamanho nominal da palvra atual do loop que sera feitas as operacoes
-        tam = Analisador[i].palavra_do_texto.length();
-
-        // Loop que percorre cada letra da palavra
-        for (j = 0; j < tam; j++)
-        {
-            // Loop que percorre o novo alfabeto do inicio ao fim
-            for (k = 0; k < 26; k++)
-            {
-                // Em caso de um encontro de letras iguais a posicao relativa da letra no vetor é
-                // guardada no vetor na posicao relativa dessa letra na palavra
-                if (Analisador[i].palavra_do_texto[j] == tolower(Letras[k]))
-                {
-                    Analisador[i].lexicografica_da_ordem[j] = k;
-                }
-            }
-        }
-    }
+    // cout << "#FIM" << endl;
 }
 
 // Algoritmo Simples usado no trabalho, realiza a selesção da palavra do inicio e faz a troca dos dados
