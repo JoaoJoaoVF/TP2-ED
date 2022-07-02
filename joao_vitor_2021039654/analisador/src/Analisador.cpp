@@ -64,13 +64,13 @@ void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_ex
     leMemLog((long int)Analisador[pos_palavra].palavra_do_texto[tam - 1], (long int)Analisador[pos_palavra].palavra_do_texto.length() * sizeof(char), Analisador[pos_palavra].id);
 
     // Em caso de haver um caracter especial diferente de '-' na palavra de acordo com sua posicação na tabela ASCII
-    if ((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
-        (palavra_extraida[tam - 1] > 57 && palavra_extraida[tam - 1] < 65) ||
-        (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
-        (palavra_extraida[tam - 1] > 122))
-    {
-        palavra_extraida[tam - 1] = 0;
-    }
+    // if ((palavra_extraida[tam - 1] > 0 && palavra_extraida[tam - 1] < 48) ||
+    //     (palavra_extraida[tam - 1] > 57 && palavra_extraida[tam - 1] < 65) ||
+    //     (palavra_extraida[tam - 1] > 90 && palavra_extraida[tam - 1] < 97) ||
+    //     (palavra_extraida[tam - 1] > 122))
+    // {
+    //     palavra_extraida[tam - 1] = 0;
+    // }
 
     // Variavel auxiliar para guardar a conversao da palavra para minusculo
     char resultado[tam];
@@ -115,20 +115,100 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras)
     }
 }
 
+void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
+{
+    int i, j, k;
+    int length;
+    // string aux;
+
+    // Loop que faz a escrita dos dados no arquivo
+    for (int i = 0; i < qtde_palavras; i++)
+    {
+        j = 0;
+        // // conversao = Analisador[i].palavra_do_texto;
+
+        // // conversao[j] = Analisador[i].palavra_do_texto[k];
+
+        length = Analisador[i].palavra_do_texto.length();
+
+        // if (Analisador[i].palavra_do_texto[k])
+        // if ((Analisador[i].palavra_do_texto[k] < 97) || (Analisador[i].palavra_do_texto[k] > 122) && (Analisador[i].palavra_do_texto[k] < 48) || (Analisador[i].palavra_do_texto[k] > 57))
+        for (k = 0; k < length; k++)
+        {
+            if ((Analisador[i].palavra_do_texto[k] > 0 && Analisador[i].palavra_do_texto[k] < 48) ||
+                (Analisador[i].palavra_do_texto[k] > 57 && Analisador[i].palavra_do_texto[k] < 65) ||
+                (Analisador[i].palavra_do_texto[k] > 90 && Analisador[i].palavra_do_texto[k] < 97) ||
+                (Analisador[i].palavra_do_texto[k] > 122))
+            {
+                // cout << "dsalpçods" << endl;
+                // conversao[j] = Analisador[i].palavra_do_texto[k];
+                // cout << conversao[j] << endl;
+                if (Analisador[i].palavra_do_texto[k + 1] == 0)
+                {
+                    // cout << "null" << endl;
+                    Analisador[i].palavra_do_texto.erase(k);
+                }
+                else
+                {
+                    Analisador[i].palavra_do_texto[k] = Analisador[i].palavra_do_texto[k + 1];
+                }
+                j++;
+            }
+        }
+    }
+}
 // Realiza a escrita do resultado num arquivo txt
 void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
 {
     // Abertura do arquivo
     ofstream saida(nome_saida);
 
+    int i, j, k;
+    int length;
+    string conversao;
+
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
     {
+        // j = 0;
+        // // conversao = Analisador[i].palavra_do_texto;
+
+        // // conversao[j] = Analisador[i].palavra_do_texto[k];
+
+        // length = Analisador[i].palavra_do_texto.length();
+
+        // for (k = 0; k < length; k++)
+        // {
+        //     // if (Analisador[i].palavra_do_texto[k])
+        //     // if ((Analisador[i].palavra_do_texto[k] < 97) || (Analisador[i].palavra_do_texto[k] > 122) && (Analisador[i].palavra_do_texto[k] < 48) || (Analisador[i].palavra_do_texto[k] > 57))
+        //     if ((Analisador[i].palavra_do_texto[k] > 0 && Analisador[i].palavra_do_texto[k] < 48) ||
+        //         (Analisador[i].palavra_do_texto[k] > 57 && Analisador[i].palavra_do_texto[k] < 65) ||
+        //         (Analisador[i].palavra_do_texto[k] > 90 && Analisador[i].palavra_do_texto[k] < 97) ||
+        //         (Analisador[i].palavra_do_texto[k] > 122))
+        //     {
+        //         // cout << "dsalpçods" << endl;
+        //         // conversao[j] = Analisador[i].palavra_do_texto[k];
+        //         // cout << conversao[j] << endl;
+        //         if (Analisador[i].palavra_do_texto[k + 1] == 0)
+        //         {
+        //             // cout << "null" << endl;
+        //             Analisador[i].palavra_do_texto.erase(k);
+        //         }
+        //         else
+        //         {
+        //             Analisador[i].palavra_do_texto[k] = Analisador[i].palavra_do_texto[k + 1];
+        //         }
+        //         j++;
+        //     }
+        // }
+
         leMemLog((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
 
         if (Analisador[i].repeticoes > 0)
         {
             saida << Analisador[i].palavra_do_texto << " " << Analisador[i].repeticoes << endl;
+
+            // saida << conversao << " " << Analisador[i].repeticoes << endl;
 
             leMemLog((long int)Analisador[i].palavra_do_texto[0], (long int)Analisador[i].palavra_do_texto[0] * sizeof(char), Analisador[i].id);
         }

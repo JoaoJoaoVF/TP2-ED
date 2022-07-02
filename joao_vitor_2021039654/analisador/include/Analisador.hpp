@@ -62,12 +62,35 @@ public:
                 {
                     return true;
                 }
+                // Caso o caractere da palavra "a" não seja uma letra e o da "b" seja
+                else if ((this->lexicografica_da_ordem[i] < 97) || (this->lexicografica_da_ordem[i] > 122) && (Analisador.lexicografica_da_ordem[i] >= 97) || (Analisador.lexicografica_da_ordem[i] <= 122))
+                {
+                    return true;
+                }
+                // Caso o caractere da palavra "b" não seja uma letra e o da "a" seja
+                else if ((this->lexicografica_da_ordem[i] >= 97) || (this->lexicografica_da_ordem[i] <= 122) && (Analisador.lexicografica_da_ordem[i] < 97) || (Analisador.lexicografica_da_ordem[i] > 122))
+                {
+                    return false;
+                }
+                // Caso o caractere da palavra "a" e "b" não sejam letras
+                else if ((this->lexicografica_da_ordem[i] < 97) || (this->lexicografica_da_ordem[i] > 122) && (Analisador.lexicografica_da_ordem[i] < 97) || (Analisador.lexicografica_da_ordem[i] > 122))
+                {
+                    // Caso a letra da palavra "a" venha depois no alfabeto do que a "b" retorna que a comparacao abaixo é falsa
+                    if (this->palavra_do_texto[i] > Analisador.palavra_do_texto[i])
+                    {
+                        return false;
+                    }
+                    // Caso a letra da palavra "a" venha antes no alfabeto do que a "b" retorna que a comparacao abaixo é verdadeira
+                    else if (this->palavra_do_texto[i] < Analisador.palavra_do_texto[i])
+                    {
+                        return true;
+                    }
+                }
+                a--;
+                b--;
             }
-            a--;
-            b--;
         }
     }
-
     bool operator>(Analisador Analisador)
     {
         // Variaveis utilizadas
@@ -109,6 +132,30 @@ public:
                 {
                     return true;
                 }
+                // Caso o caractere da palavra "a" não seja uma letra e o da "b" seja
+                else if ((this->lexicografica_da_ordem[i] < 97) || (this->lexicografica_da_ordem[i] > 122) && (Analisador.lexicografica_da_ordem[i] >= 97) || (Analisador.lexicografica_da_ordem[i] <= 122))
+                {
+                    return false;
+                }
+                // Caso o caractere da palavra "b" não seja uma letra e o da "a" seja
+                else if ((this->lexicografica_da_ordem[i] >= 97) || (this->lexicografica_da_ordem[i] <= 122) && (Analisador.lexicografica_da_ordem[i] < 97) || (Analisador.lexicografica_da_ordem[i] > 122))
+                {
+                    return true;
+                }
+                // Caso o caractere da palavra "a" e "b" não sejam letras
+                else if ((this->lexicografica_da_ordem[i] < 97) || (this->lexicografica_da_ordem[i] > 122) && (Analisador.lexicografica_da_ordem[i] < 97) || (Analisador.lexicografica_da_ordem[i] > 122))
+                {
+                    // Caso a letra da palavra "b" venha depois no alfabeto do que a "a" retorna que a comparacao abaixo é falsa
+                    if (this->lexicografica_da_ordem[i] < Analisador.lexicografica_da_ordem[i])
+                    {
+                        return false;
+                    }
+                    // Caso a letra da palavra "b" venha antes no alfabeto do que a "a" retorna que a comparacao abaixo é verdadeira
+                    else if (this->lexicografica_da_ordem[i] > Analisador.lexicografica_da_ordem[i])
+                    {
+                        return true;
+                    }
+                }
             }
             a--;
             b--;
@@ -116,10 +163,7 @@ public:
     }
 };
 
-void ImprimePalavras(Analisador Analisador[], int qtde_palavras);
-void ImprimeOrdemLexicograficadasPalavras(Analisador Analisador[], int qtde_palavras);
-void ImprimeOrdemLexicografica(char Letras[]);
-
+void RemoveCaracteres(Analisador Analisador[], int qtde_palavras);
 void AtribuiOrdem(Analisador Analisador[], int qtde_palavras, char Letras[]);
 void ConverteMinusculo(Analisador Analisador[], int pos_palavra, char palavra_extraida[]);
 void BuscaRepeticao(Analisador Analisador[], int qtde_palavras);

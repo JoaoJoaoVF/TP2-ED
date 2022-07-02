@@ -1,12 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
-g++  -pg -Wall -c -I./include/  -o ./obj//Execucao.o src/Execucao.cpp 
-g++  -pg -Wall -c -I./include/  -o ./obj//Analisador.o src/Analisador.cpp 
-g++  -pg -Wall -c -I./include/  -o ./obj//main.o src/main.cpp 
-g++ -pg -Wall -c -I./include/  -o ./obj//memlog.o src/memlog.cpp
-g++ -g -o ./bin//analisador ./obj//Execucao.o ./obj//Analisador.o ./obj//main.o ./obj//memlog.o -lm 
-rm -f bin//analisador.out 
-cp bin//analisador bin//analisador.out
-./bin//analisador.out -i "./entrada/1.txt" -o "./saida/1.txt" 
+./bin//analisador.out -i "./entrada/8.txt" -o "./saida/8.txt" 
 make: Leaving directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
  

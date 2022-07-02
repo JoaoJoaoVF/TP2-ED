@@ -42,6 +42,7 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
             {
                 // Quando o bloco #ORDEM é encontrado troca o tipo de leitura para 2
                 tipo_de_leitura = 2;
+                break;
             }
             else
             {
@@ -74,13 +75,12 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
     }
 
     // Chama as funcoes necessarias para o resto da execucao do programa
-
+    cout << Analisador_do_arquivo[posicao_palavra].palavra_do_texto << endl;
+    posicao_palavra = posicao_palavra - 1;
     AtribuiOrdem(Analisador_do_arquivo, posicao_palavra, lexicografia);
 
-    BuscaRepeticao(Analisador_do_arquivo, posicao_palavra - 1);
-
     int b = 0;
-    for (int a = 0; a < posicao_palavra - 1; a++)
+    for (int a = 0; a < posicao_palavra; a++)
     {
         b++;
         if (b == Mediana)
@@ -90,10 +90,14 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
         }
         else
         {
-            QuickSort(Analisador_do_arquivo, posicao_palavra - 1);
+            QuickSort(Analisador_do_arquivo, posicao_palavra);
         }
     }
     QuickSort(Analisador_do_arquivo, posicao_palavra);
+
+    RemoveCaracteres(Analisador_do_arquivo, posicao_palavra);
+
+    BuscaRepeticao(Analisador_do_arquivo, posicao_palavra);
 
     Saida(Analisador_do_arquivo, posicao_palavra, arquivo_saida);
 
