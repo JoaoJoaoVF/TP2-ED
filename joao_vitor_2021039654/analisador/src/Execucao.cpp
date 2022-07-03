@@ -75,7 +75,6 @@ void Executa(int Mediana, char *arquivo_entrada, char *arquivo_saida, int Simple
     }
 
     // Chama as funcoes necessarias para o resto da execucao do programa
-    cout << Analisador_do_arquivo[posicao_palavra].palavra_do_texto << endl;
     posicao_palavra = posicao_palavra - 1;
     AtribuiOrdem(Analisador_do_arquivo, posicao_palavra, lexicografia);
 

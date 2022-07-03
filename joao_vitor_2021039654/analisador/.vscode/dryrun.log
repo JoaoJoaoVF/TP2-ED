@@ -1,5 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
-./bin//analisador.out -i "./entrada/8.txt" -o "./saida/8.txt" 
+./bin//analisador.out -i "./entrada/3.txt" -o "./saida/3.txt"
 make: Leaving directory '/home/jvf/joao_vitor_2021039654/TP2-ED/joao_vitor_2021039654/analisador'
  

@@ -119,30 +119,33 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
 {
     int i, j, k;
     int length;
-    // string aux;
+    string aux;
 
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
     {
-        j = 0;
+        j = 1;
+        string aux;
         // // conversao = Analisador[i].palavra_do_texto;
 
         // // conversao[j] = Analisador[i].palavra_do_texto[k];
 
         length = Analisador[i].palavra_do_texto.length();
+        aux = Analisador[i].palavra_do_texto;
 
         // if (Analisador[i].palavra_do_texto[k])
         // if ((Analisador[i].palavra_do_texto[k] < 97) || (Analisador[i].palavra_do_texto[k] > 122) && (Analisador[i].palavra_do_texto[k] < 48) || (Analisador[i].palavra_do_texto[k] > 57))
-        for (k = 0; k < length; k++)
+        for (k = 1; k < length; k++)
         {
-            if ((Analisador[i].palavra_do_texto[k] > 0 && Analisador[i].palavra_do_texto[k] < 48) ||
-                (Analisador[i].palavra_do_texto[k] > 57 && Analisador[i].palavra_do_texto[k] < 65) ||
-                (Analisador[i].palavra_do_texto[k] > 90 && Analisador[i].palavra_do_texto[k] < 97) ||
-                (Analisador[i].palavra_do_texto[k] > 122))
+            if (((Analisador[i].palavra_do_texto[k] > 0 && Analisador[i].palavra_do_texto[k] < 48) ||
+                 (Analisador[i].palavra_do_texto[k] > 57 && Analisador[i].palavra_do_texto[k] < 65) ||
+                 (Analisador[i].palavra_do_texto[k] > 90 && Analisador[i].palavra_do_texto[k] < 97) ||
+                 (Analisador[i].palavra_do_texto[k] > 122)) &&
+                Analisador[i].palavra_do_texto[k] != 45)
             {
                 // cout << "dsalpçods" << endl;
                 // conversao[j] = Analisador[i].palavra_do_texto[k];
-                // cout << conversao[j] << endl;
+                // // cout << conversao[j] << endl;
                 if (Analisador[i].palavra_do_texto[k + 1] == 0)
                 {
                     // cout << "null" << endl;
@@ -150,11 +153,25 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
                 }
                 else
                 {
-                    Analisador[i].palavra_do_texto[k] = Analisador[i].palavra_do_texto[k + 1];
+                    // Analisador[i].palavra_do_texto[k] = Analisador[i].palavra_do_texto[k + 1];
+                    Analisador[i].palavra_do_texto.erase(k);
+                    for (int h = k + 1; h < length; h++)
+                    {
+                        if (Analisador[i].palavra_do_texto[h] == 0)
+                        {
+                            break;
+                        }
+                        Analisador[i].palavra_do_texto.push_back(Analisador[i].palavra_do_texto[h]);
+                    }
                 }
-                j++;
+
+                // aux[j++] = Analisador[i].palavra_do_texto[k];
+                // cout << Analisador[i].palavra_do_texto[k] << endl;
+                // j++;
             }
         }
+        // Analisador[i].palavra_do_texto = aux;
+        // cout << aux << endl;
     }
 }
 // Realiza a escrita do resultado num arquivo txt
