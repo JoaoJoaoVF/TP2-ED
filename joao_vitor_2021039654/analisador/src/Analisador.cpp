@@ -110,8 +110,9 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras)
 void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
 {
     // Variaveis uteis
-    int i, j, k;
+    int i, j, k, x, u;
     int length;
+    string aux;
 
     // Loop que faz a escrita dos dados no arquivo
     for (int i = 0; i < qtde_palavras; i++)
@@ -119,7 +120,7 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
         j = 1;
         // Pega o tamanho da string
         length = Analisador[i].palavra_do_texto.length();
-
+        aux = Analisador[i].palavra_do_texto;
         for (k = 1; k < length; k++)
         {
             // Copara para ver se o caracter não é um numero ou letra
@@ -137,19 +138,26 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
                 // Caso nao seja ele é removido
                 else
                 {
-                    // Tudo apos ele é apagado
-                    Analisador[i].palavra_do_texto.erase(k);
 
                     // e adicioando os outros digitos
+                    x = k;
                     for (int h = k + 1; h < length; h++)
                     {
-                        if (Analisador[i].palavra_do_texto[h] == 0)
+                        if (h + 1 == length)
                         {
-                            break;
+                            cout << Analisador[i].palavra_do_texto[h] << endl;
+                            u = 1;
                         }
-                        Analisador[i].palavra_do_texto.push_back(Analisador[i].palavra_do_texto[h]);
+                        Analisador[i].palavra_do_texto[x] = Analisador[i].palavra_do_texto[h];
+                        x++;
                     }
                 }
+            }
+            if (u == 1)
+            {
+                Analisador[i].palavra_do_texto.erase(length - 1);
+                u = 0;
+                cout << "sajoidkhsalahdi" << endl;
             }
         }
     }
