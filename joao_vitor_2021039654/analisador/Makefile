@@ -24,8 +24,16 @@ EXE = $(BIN)/analisador.out
 all: use
 
 use: $(EXE)
-	$(EXE) -i "./entrada/ULTRA.txt" -o "./saida/ULTRA.txt"
-
+	$(EXE) -i "./entrada/1.txt" -o "./saida/1.txt"
+	$(EXE) -i "./entrada/2.txt" -o "./saida/2.txt"
+	$(EXE) -i "./entrada/3.txt" -o "./saida/3.txt"
+	$(EXE) -i "./entrada/4.txt" -o "./saida/4.txt"
+	$(EXE) -i "./entrada/5.txt" -o "./saida/5.txt"
+	$(EXE) -i "./entrada/6.txt" -o "./saida/6.txt"
+	$(EXE) -i "./entrada/7.txt" -o "./saida/7.txt"
+	$(EXE) -i "./entrada/8.txt" -o "./saida/8.txt"
+	$(EXE) -i "./entrada/9.txt" -o "./saida/9.txt"
+	$(EXE) -i "./entrada/10.txt" -o "./saida/10.txt"
 
 $(BIN)/analisador: $(OBJS)
 	$(CC) -g -o $(BIN)/analisador $(OBJS) $(LIBS)

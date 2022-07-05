@@ -110,14 +110,13 @@ void BuscaRepeticao(Analisador Analisador[], int qtde_palavras)
 void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
 {
     // Variaveis uteis
-    int i, j, k, x, u;
+    int i, h, k, x, u;
     int length;
     string aux;
 
     // Loop que faz a escrita dos dados no arquivo
-    for (int i = 0; i < qtde_palavras; i++)
+    for (i = 0; i < qtde_palavras; i++)
     {
-        j = 1;
         // Pega o tamanho da string
         length = Analisador[i].palavra_do_texto.length();
         aux = Analisador[i].palavra_do_texto;
@@ -141,11 +140,10 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
 
                     // e adicioando os outros digitos
                     x = k;
-                    for (int h = k + 1; h < length; h++)
+                    for (h = k + 1; h < length; h++)
                     {
                         if (h + 1 == length)
                         {
-                            cout << Analisador[i].palavra_do_texto[h] << endl;
                             u = 1;
                         }
                         Analisador[i].palavra_do_texto[x] = Analisador[i].palavra_do_texto[h];
@@ -157,7 +155,6 @@ void RemoveCaracteres(Analisador Analisador[], int qtde_palavras)
             {
                 Analisador[i].palavra_do_texto.erase(length - 1);
                 u = 0;
-                cout << "sajoidkhsalahdi" << endl;
             }
         }
     }
@@ -168,12 +165,10 @@ void Saida(Analisador Analisador[], int qtde_palavras, char *nome_saida)
     // Abertura do arquivo
     ofstream saida(nome_saida);
 
-    int i, j, k;
-    int length;
-    string conversao;
+    int i;
 
     // Loop que faz a escrita dos dados no arquivo
-    for (int i = 0; i < qtde_palavras; i++)
+    for (i = 0; i < qtde_palavras; i++)
     {
 
         leMemLog((long int)Analisador[i].repeticoes, (long int)sizeof(int), Analisador[i].id);
